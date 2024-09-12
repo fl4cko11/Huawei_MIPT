@@ -16,10 +16,20 @@ struct roots{
     bool isroot2;
 };
 
-double coef_input(char coef_name){
+double coef_input(char coef_name) {
     double coef;
-    printf("Enter coefficient %c: ", coef_name);
-    scanf("%lf", &coef);
+    int result;
+    while (1) { // бесконечный цикл, который завершится при корректном вводе
+        printf("Enter coefficient %c: ", coef_name);
+        result = scanf("%lf", &coef);
+        
+        if (result == 1) {
+            break; // корректный ввод, выход из цикла
+        } else {
+            printf("Not correct input, try again!\n");
+            while (getchar() != '\n'); // очистка буфера ввода
+        }
+    }
     return coef;
 }
 
