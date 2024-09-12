@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <float.h>
 
 struct coefs {
     double a;
@@ -8,66 +9,64 @@ struct coefs {
     double c;
 };
 
-coefs quadro_input() {
-    coefs coefs;
-    coefs.a = 0;
-    coefs.b = 0;
-    coefs.c = 0;
-    printf("Enter coefficient a: ");
-    while (scanf("%lf", &coefs.a) != 1) {
-        printf("Error input for a, try again: ");
-        while (getchar() != '\n'); // очистка буфера ввода
-    }
+struct roots{
+    double root1;
+    double root2;
+    bool isroot1;
+    bool isroot2;
+};
 
-    printf("Enter coefficient b: ");
-    while (scanf("%lf", &coefs.b) != 1) {
-        printf("Error input for b, try again: ");
-        while (getchar() != '\n'); // очистка буфера ввода
-    }
-
-    printf("Enter coefficient c: ");
-    while (scanf("%lf", &coefs.c) != 1) {
-        printf("Error input for c, try again: ");
-        while (getchar() != '\n'); // очистка буфера ввода
-    }
-
-    return coefs;
+double coef_input(char coef_name){
+    double coef;
+    printf("Enter coefficient %c: ", coef_name);
+    scanf("%lf", &coef);
+    return coef;
 }
 
-bool sign_of_diskr(double d) {
-    return d > 0;
+
+coefs quadro_input() {
+    coefs coefs = {+INFINITY, +INFINITY, +INFINITY};
+    coefs.a = coef_input('a');
+    coefs.b = coef_input('b');
+    coefs.c = coef_input('c');
+    return coefs;
 }
 
 double diskr(double a, double b, double c) {
     return b * b - 4 * a * c;
 }
 
-void quadro_output(double a, double b, double c) {
-    double root1, root2;
-    bool hasRoot1 = false, hasRoot2 = false;
+roots quadro_solution(coefs coefs){
+    roots roots = {+INFINITY, +INFINITY, false, false};
 
-    if (a == 0) {
-        if (b != 0) {
-            root1 = -c / b;
-            hasRoot1 = true;
+    if (coefs.a < DBL_MIN && coefs.a > -DBL_MIN) {
+        if (coefs.b > DBL_MIN || coefs.b < -DBL_MIN) {
+            roots.root1 = -coefs.c / coefs.b;
+            roots.isroot1 = true;
         }
-    } else {
-        double d = diskr(a, b, c);
-        if (sign_of_diskr(d)) {
-            root1 = (-b + sqrt(d)) / (2 * a);
-            root2 = (-b - sqrt(d)) / (2 * a);
-            hasRoot1 = true;
-            hasRoot2 = true;
-        } else if (d == 0) {
-            root1 = -b / (2 * a);
-            hasRoot1 = true;
+    } 
+    else {
+        double d = diskr(coefs.a, coefs.b, coefs.c);
+        printf("diskr: %lf\n", d);
+        if (d >= DBL_MIN) {
+            roots.root1 = (-coefs.b + sqrt(d)) / (2 * coefs.a);
+            roots.root2 = (-coefs.b - sqrt(d)) / (2 * coefs.a);
+            roots.isroot1 = true;
+            roots.isroot2 = true;
+        } 
+        else if (d < DBL_MIN && d>=0) {
+            roots.root1 = -coefs.b / (2 * coefs.a);
+            roots.isroot1 = true;
         }
+        return roots;
     }
-    
-    if (hasRoot1) {
-        printf("root1: %lf", root1);
-        if (hasRoot2) {
-            printf(", root2: %lf", root2);
+}
+
+void quadro_output(roots roots) {
+    if (roots.isroot1) {
+        printf("root1: %lf", roots.root1);
+        if (roots.isroot2) {
+            printf(", root2: %lf", roots.root2);
         }
         printf("\n");
     } else {
@@ -76,7 +75,6 @@ void quadro_output(double a, double b, double c) {
 }
 
 int main() {
-    coefs coefs = quadro_input();
-    quadro_output(coefs.a, coefs.b, coefs.c);
+    quadro_output(quadro_solution(quadro_input()));
     return 0;
 }
