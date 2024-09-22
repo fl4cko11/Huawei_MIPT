@@ -1,48 +1,55 @@
 #include "solver.h"
 #include "in_out.h"
 
-void test_two_roots() {
-    coefs test_coefs = {1, -3, 2}; // x^2 - 3x + 2 = 0, roots: 2, 1
-    roots result = quadro_solution(test_coefs);
-    assert(result.root1 == 2);
-    assert(result.root2 == 1);
+bool is_equal(roots *exp_roots, roots *res_roots) {
+    bool flag1 = isnan(res_roots->root1) ? isnan(exp_roots->root1) || isnan(exp_roots->root2) : 
+                (res_roots->root1 == exp_roots->root1 || res_roots->root1 == exp_roots->root2);
+    bool flag2 = isnan(res_roots->root2) ? isnan(exp_roots->root1) || isnan(exp_roots->root2) : 
+                (res_roots->root2 == exp_roots->root1 || res_roots->root2 == exp_roots->root2);
+    return flag1 && flag2;
 }
 
-void test_one_root() {
-    coefs test_coefs = {1, 2, 1}; // x^2 + 2x + 1 = 0, roots: -1, -1
-    roots result = quadro_solution(test_coefs);
-    assert(result.root1 == -1);
-    assert(isnan(result.root2));
-}
-
-void test_no_roots() {
-    coefs test_coefs = {1, 0, 1}; // x^2 + 1 = 0, no roots
-    roots result = quadro_solution(test_coefs);
-    assert(isnan(result.root1));
-    assert(isnan(result.root2));
-}
-
-void test_linear_equation() {
-    coefs test_coefs = {0, 2, -4}; // 2x - 4 = 0, root: 2
-    roots result = quadro_solution(test_coefs);
-    assert(result.root1 == 2);
-    assert(isnan(result.root2));
-}
-
-void test_all_zeroes() {
-    coefs test_coefs = {0, 0, 0}; // 0x = 0, no roots (program logic)
-    roots result = quadro_solution(test_coefs);
-    assert(isnan(result.root1));
-    assert(isnan(result.root2));
+int run_test(roots exp_roots, roots res_roots, const char *test_name) {
+    if (!is_equal(&exp_roots, &res_roots)) {
+        printf("%s - failed\n expected roots: %f, %f\n result roots (NAN <=> no roots): %f, %f\n\n",
+               test_name, exp_roots.root1, exp_roots.root2, res_roots.root1, res_roots.root2);
+        return 0;
+    }
+    return 1;
 }
 
 int main() {
-    test_two_roots();
-    test_one_root();
-    test_no_roots();
-    test_linear_equation();
-    test_all_zeroes();
+    int passed = 1;
 
-    printf("All tests passed!\n");
+    coefs coef1 = {1, -3, 2};
+    coefs coef2 = {1, 2, 1};
+    coefs coef3 = {1, 0, 1};
+    coefs coef4 = {0, 2, -4};
+    coefs coef5 = {1, 2.000000000000000001, 1};
+
+    quadro_tests tests[] = {
+        {{2, 1}, quadro_solution(&coef1)},          // Two roots
+        {{-1, NAN}, quadro_solution(&coef2)},       // One root
+        {{NAN, NAN}, quadro_solution(&coef3)},      // No roots
+        {{2, NAN}, quadro_solution(&coef4)},         // Linear equation
+        {{-1, NAN}, quadro_solution(&coef5)}          // Little coefficients
+    };
+
+    const char *test_names[] = {
+        "test_two_roots",
+        "test_one_root",
+        "test_no_roots",
+        "test_linear_equation",
+        "test_little_coefs"
+    };
+
+    for (size_t i = 0; i < sizeof(tests) / sizeof(tests[0]); ++i) {
+        passed &= run_test(tests[i].exp_roots, tests[i].res_roots, test_names[i]);
+    }
+
+    if (passed) {
+        printf("All tests passed!\n");
+    }
+
     return 0;
 }

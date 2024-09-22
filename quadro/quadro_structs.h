@@ -1,14 +1,20 @@
 #ifndef QUADRO_STRUCTS_H
 #define QUADRO_STRUCTS_H
 
-struct roots{
+typedef struct {
     double root1;
     double root2;
-};
+} roots;
 
-struct coefs {
+typedef struct{
     double a;
     double b;
     double c;
-};
+} coefs;
+
+typedef struct{
+    roots exp_roots;
+    roots res_roots;
+} quadro_tests;
+
 #endif
