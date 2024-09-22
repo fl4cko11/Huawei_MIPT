@@ -9,7 +9,12 @@
 
 #include "quadro_structs.h"
 
-double diskr(double a, double b, double c) {
+// declaration - объявление
+// definition - определение
+
+double diskr(double a, double b, double c);
+
+double diskr(double a, double b, double c) { // definition
     return b * b - 4 * a * c;
 }
 
