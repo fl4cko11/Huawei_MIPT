@@ -2,9 +2,16 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
+#include <ctype.h>
 
-const int len_onegin = 20;
-const int max_word = 100;
+const int max_words = 100;
+
+struct onegin_params{
+    char** string_list;
+    int* value_list;
+    int len_lists;
+};
 
 int max_string (char *s1, char *s2){
     int lens1 = strlen(s1);
@@ -31,50 +38,50 @@ int string_compare(char *s1, char *s2){
             return 0;
         }
     }
+    return 0;
 }
 
 int *string_replacer(int *value_list, int value_for_s1, int value_for_s2, int diff_s, int len_list){
     int index_s1 = find_index(value_list, value_for_s1, len_list);
     int index_s2 = find_index(value_list, value_for_s2, len_list);
-
     if (diff_s > 0){
         int temp = value_list[index_s1];
         value_list[index_s1] = value_list[index_s2];
         value_list[index_s2] = temp;
         return value_list;
-    return value_list;
     }
+    else return value_list;
 }
 
-int *sort_func(int *value_list, char **string_list, int len_lists){ /*bubble*/
+int *sort_func(onegin_params *onp){ /*bubble*/
     int i = 0;
     int flag = 1;
-    int diff_s;
+    int diff_s = 0;
     while (flag == 1){
         flag = 0;
-        for (int j = 0; j <= (len_lists - i - 2); j++){
-            diff_s = string_compare(string_list[j], string_list[j+1]);
+        for (int j = 0; j <= (onp->len_lists - i - 2); j++){
+            diff_s = string_compare(onp->string_list[onp->value_list[j]], onp->string_list[onp->value_list[j+1]]);
             if(diff_s > 0){
-                value_list = string_replacer(value_list, j, j+1, diff_s, len_lists);
+                onp->value_list = string_replacer(onp->value_list, onp->value_list[j], onp->value_list[j+1], diff_s, onp->len_lists);
                 flag = 1;
             }
         }
         i++;
     }
-    return value_list;
+    return onp->value_list;
 }
 
-void sorted_string_list_print(int *sorted_value_list, char **string_list, int len_lists){
-    for (int i = 0; i < len_lists; i++){
-        printf("%s\n", string_list[sorted_value_list[i]]);
+void onegin_output(onegin_params *onp){
+    for (int i = 0; i < onp->len_lists; i++){
+        printf("%s\n", onp->string_list[onp->value_list[i]]);
     }
 }
 
 int strings_in_txt(FILE *txt_file) {
-    char str[len_onegin];
+    char str[max_words];
     int count = 0;
-    // Считываем слова из файла
-    while (fscanf(txt_file, "%[^\n]", str) == 1) {
+    // Считываем строки из файла
+    while (fscanf(txt_file, "%[^\n]\n", str) == 1) {
         count++;
     }
     // Возвращаем указатель в начало файла для повторного чтения
@@ -82,26 +89,23 @@ int strings_in_txt(FILE *txt_file) {
     return count;
 }
 
-int main(){
-    FILE *oneginfp;
-    oneginfp=fopen("onegin.txt", "r");
-    if (oneginfp == NULL){
-        perror("file wrong open");
-        return 1;
-    }
+onegin_params onegin_input(FILE *oneginfp){
+    onegin_params onp = {NULL, NULL};
 
+    //кол-во строк для 2d массива
     int strings_onegin = strings_in_txt(oneginfp);
-    printf("words in file: %d\n", strings_onegin);
-    // Выделяем память для массива строк
+
+    // Выделяем память для строк
     char **str_list = (char **)malloc(strings_onegin * sizeof(char *));
     if (str_list == NULL) {
         perror("Failed to allocate memory for string list");
         fclose(oneginfp);
-        return 1;
+        assert(str_list != NULL);
     }
 
+    // Выделяем память для столбцов
     for (int i = 0; i < strings_onegin; i++) {
-        str_list[i] = (char *)malloc(max_word * sizeof(char)); // Выделяем память для каждой строки
+        str_list[i] = (char *)malloc(max_words * sizeof(char));
         if (str_list[i] == NULL) {
             perror("Failed to allocate memory for a word");
             // Освобождаем уже выделенную память в случае ошибки
@@ -110,13 +114,17 @@ int main(){
             }
             free(str_list);
             fclose(oneginfp);
-            return 1;
+            assert(str_list[i] != NULL);
         }
     }
 
     // Считываем слова в массив строк
     for (int i = 0; i < strings_onegin; i++) {
-        fscanf(oneginfp, "%s", str_list[i]);
+        if (fgets(str_list[i], max_words, oneginfp) == NULL) {
+            break;  // Выход из цикла, если достигнут конец файла
+        }
+        // Убираем символ новой строки, если он есть
+        str_list[i][strcspn(str_list[i], "\n")] = '\0';
     }
 
     int *value_list = (int *)malloc(strings_onegin * sizeof(int));
@@ -124,7 +132,19 @@ int main(){
         value_list[i] = i;
     }
 
-    int *sorted_val = sort_func(value_list, str_list, strings_onegin);
-    sorted_string_list_print(sorted_val, str_list, strings_onegin);
+    onp.string_list = str_list;
+    onp.value_list = value_list;
+    onp.len_lists = strings_onegin;
+    return onp;
+}
+
+int main(){
+    FILE *oneginfp;
+    oneginfp=fopen("onegin.txt", "r");
+    assert(oneginfp != NULL);
+
+    onegin_params onp = onegin_input(oneginfp);
+    onp.value_list = sort_func(&onp);
+    onegin_output(&onp);
     return 0;
 }
