@@ -30,11 +30,22 @@ int find_index(int *value_list, int value_for_s, int len_list){
 }
 
 int string_compare(char *s1, char *s2){
-    for (int i = 0; i < max_string(s1, s2); i++){
-        if (s1[i] != s2[i]){
-            return s1[i] - s2[i];
+    int i = 0;
+    int j = 0;
+
+    while (s1[i] != '\0' && !isalpha(s1[i])) {
+        i++;
+    }
+
+    while (s2[j] != '\0' && !isalpha(s2[j])) {
+        j++;
+    }
+
+    for (int k = i, t = j; (k < max_string(s1, s2)) && (t < max_string(s1, s2)); k++, t++){
+        if (s1[k] != s2[t]){
+            return s1[k] - s2[t];
         }
-        if ((s1[i] == '\0') || (s2[i] == '\0')){
+        if ((s1[k] == '\0') || (s2[t] == '\0')){
             return 0;
         }
     }
