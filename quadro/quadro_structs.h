@@ -13,8 +13,9 @@ typedef struct{
 } coefs;
 
 typedef struct{
+    coefs test_coefs;
     roots exp_roots;
-    roots res_roots;
+    const char *testname;
 } quadro_tests;
 
 #endif
