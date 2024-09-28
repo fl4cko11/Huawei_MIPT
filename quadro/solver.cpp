@@ -12,10 +12,10 @@ bool is_zero(double d) {
 }
 
 roots quadro_solution(coefs *coefs) {
+    assert(coefs != nullptr);
     roots roots = {NAN, NAN};
-    
     if (is_zero(coefs->a)) {
-        if (1 - is_zero(coefs->b)) {
+        if (!is_zero(coefs->b)) {
             roots.root1 = -coefs->c / coefs->b;
         }
     }
@@ -23,7 +23,7 @@ roots quadro_solution(coefs *coefs) {
         double d = diskr(coefs);
         if (d >= 0) { 
             double sqr_d = sqrt(d);
-            if (1 - is_zero(sqr_d)) {
+            if (!is_zero(sqr_d)) {
                 roots.root1 = (-coefs->b + sqrt(d)) / (2 * coefs->a);
                 roots.root2 = (-coefs->b - sqrt(d)) / (2 * coefs->a);
             } 
@@ -32,6 +32,5 @@ roots quadro_solution(coefs *coefs) {
             }
         }
     }
-
     return roots;
 }

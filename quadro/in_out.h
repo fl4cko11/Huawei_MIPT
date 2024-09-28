@@ -9,6 +9,8 @@
 
 #include "quadro_structs.h"
 
+void buffer_clean();
+
 double coef_input(char coef_name);
 
 coefs quadro_input();
