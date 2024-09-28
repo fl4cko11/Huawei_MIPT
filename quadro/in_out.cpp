@@ -1,5 +1,9 @@
 #include "in_out.h"
 
+void buffer_clean() {
+    while (getchar() != '\n');
+}
+
 double coef_input(char coef_name) {
     double coef = NAN; // init
     int result = 0;
@@ -11,11 +15,9 @@ double coef_input(char coef_name) {
         } 
         else {
             printf("Not correct input, try again!\n");
-            // clear_buffer()
-            while (getchar() != '\n'); // очистка буфера ввода
+            buffer_clean();
         }
     }
-
     return coef;
 }
 
