@@ -14,4 +14,4 @@ onegin_main.o: onegin_main.cpp
 	gcc -c onegin_main.cpp -o onegin_main.o
 
 clean:
-	rm -f *.o quadro_tests quadro_solution
+	rm -f *.o onegin_straight_comp
