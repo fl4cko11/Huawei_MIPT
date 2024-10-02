@@ -1,5 +1,5 @@
-onegin_straight_comp: onegin_ctors.o onegin_output.o onegin_sort_func.o onegin_main.o
-	gcc onegin_ctors.o onegin_output.o onegin_sort_func.o onegin_main.o -o onegin_straight_comp
+osc: onegin_ctors.o onegin_output.o onegin_sort_func.o onegin_main.o
+	gcc onegin_ctors.o onegin_output.o onegin_sort_func.o onegin_main.o -o osc
 
 onegin_ctors.o: onegin_ctors.cpp
 	gcc -c onegin_ctors.cpp -o onegin_ctors.o
@@ -14,4 +14,4 @@ onegin_main.o: onegin_main.cpp
 	gcc -c onegin_main.cpp -o onegin_main.o
 
 clean:
-	rm -f *.o onegin_straight_comp
+	rm -f *.o osc

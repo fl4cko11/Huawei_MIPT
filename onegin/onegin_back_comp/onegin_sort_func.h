@@ -9,7 +9,7 @@ int max_string(str_ptrs s1, str_ptrs s2);
 
 int str_compare(str_ptrs s1, str_ptrs s2);
 
-str_ptrs *string_swap(str_ptrs *spa, int index_1, int index_2, size_t strs_in_buffer);
+void string_swap(str_ptrs *spa, int index_1, int index_2, size_t strs_in_buffer);
 
 void sort_func(str_ptrs *spa, int len_list);
 
