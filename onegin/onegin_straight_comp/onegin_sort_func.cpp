@@ -38,7 +38,7 @@ int str_compare(str_ptrs s1, str_ptrs s2) {
     return 0;
 }
 
-str_ptrs *string_swap(str_ptrs *spa, int index_1, int index_2, size_t strs_in_buffer) {
+void string_swap(str_ptrs *spa, int index_1, int index_2, size_t strs_in_buffer) {
     assert(spa != nullptr);
     assert(index_1 >=0 && index_2 >= 0);
     assert(strs_in_buffer >= 0);
@@ -46,7 +46,6 @@ str_ptrs *string_swap(str_ptrs *spa, int index_1, int index_2, size_t strs_in_bu
     str_ptrs temp = spa[index_1];
     spa[index_1] = spa[index_2];
     spa[index_2] = temp;
-    return spa;
 }
 
 void sort_func(str_ptrs *spa, int len_list) {
@@ -61,7 +60,7 @@ void sort_func(str_ptrs *spa, int len_list) {
         for (int j = 0; j <= (len_list - it - 2); j++){
             diff_s = str_compare(spa[j], spa[j+1]);
             if(diff_s > 0){
-                spa = string_swap(spa, j, j+1, len_list);
+                string_swap(spa, j, j+1, len_list);
                 is_changes = true;
             }
         }
