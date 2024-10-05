@@ -36,8 +36,8 @@ typedef struct {
 typedef struct {
     uint32_t canary_start;
     stackelem_t *data;
-    int size;
-    int capacity;
+    size_t size;
+    size_t capacity;
     stackelem_t popped;
     stk_hash hash;
     uint32_t canary_end;

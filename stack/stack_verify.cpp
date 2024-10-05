@@ -8,8 +8,8 @@ void stack_dump(my_stack *stk) {
     printf("hash for struct: %ld\n", stk->hash.hash_str);
     printf("hash for data: %ld\n", stk->hash.hash_data);
     printf("adress of 1st elem of stk: %p\n", stk->data);
-    printf("size of stk: %d\n", stk->size - 1);
-    printf("capasity of stk: %d\n", stk->capacity);
+    printf("size of stk: %ld\n", stk->size - 1);
+    printf("capasity of stk: %ld\n", stk->capacity);
     printf("stk wo canary: ");
     for (int i = 1; i < stk->size; i++) {
         if (stk->data[i] != CANARY_VALUE) {
@@ -17,9 +17,9 @@ void stack_dump(my_stack *stk) {
         }
     }
     printf("\n");
-    printf("poisoned value (index in stk = %d) %f\n", stk->size - 1, stk->data[stk->size]);
+    printf("poisoned value (index in stk = %ld) %f\n", stk->size - 1, stk->data[stk->size]);
     if (stk->capacity == 2) {}
-    else printf("another poisoned value (index in stk = %d) %f\n", stk->capacity - 2 - 1, stk->data[stk->capacity - 2]);
+    else printf("another poisoned value (index in stk = %ld) %f\n", stk->capacity - 2 - 1, stk->data[stk->capacity - 2]);
     if (is_poisoned(stk->popped)){
         printf("popped elem: %f\n", stk->popped);
     }
