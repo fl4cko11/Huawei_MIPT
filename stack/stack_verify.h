@@ -6,6 +6,6 @@
 
 void stack_dump(my_stack *stk);
 
-int stack_error(my_stack *stk);
+void stack_error(my_stack *stk);
 
 #endif

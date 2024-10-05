@@ -3,8 +3,8 @@
 
 #include "stack_structs.h"
 
-unsigned long djb2(const char *str);
+unsigned long djb2_struct(my_stack *stk);
 
-unsigned long hash_struct(my_stack *stk);
+unsigned long djb2_data(my_stack *stk);
 
 #endif

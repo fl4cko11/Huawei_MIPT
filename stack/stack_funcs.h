@@ -7,9 +7,9 @@
 
 void stack_ctor(my_stack *stk);
 
-my_stack *realloc_incr_stack(my_stack *stk);
+void realloc_incr_stack(my_stack *stk);
 
-my_stack *realloc_decr_stack(my_stack *stk);
+void realloc_decr_stack(my_stack *stk);
 
 void stack_push(my_stack *stk, stackelem_t elem);
 

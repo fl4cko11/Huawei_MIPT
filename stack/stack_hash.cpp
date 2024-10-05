@@ -1,16 +1,23 @@
 #include "stack_hash.h"
 
-unsigned long djb2(const char *str) {
+unsigned long djb2_struct(my_stack *stk) {
     unsigned long hash = 5381;
-    int c;
-    while ((c = *str++)) {
-        hash = ((hash << 5) + hash) + c;  // hash * 33 + c
-    }
+    long hash_adder = (long)stk->data;
+    hash = ((hash << 5) + hash) + hash_adder;
+
+    hash_adder = (long)stk->size;
+    hash = ((hash << 5) + hash) + hash_adder;
+
+    hash_adder = (long)stk->capacity;
+    hash = ((hash << 5) + hash) + hash_adder;
     return hash;
 }
 
-unsigned long hash_struct(my_stack *stk) {
-    char buffer[100];
-    snprintf(buffer, sizeof(buffer), "%p%d%d", stk->data, stk->size, stk->capacity);
-    return djb2(buffer);
+unsigned long djb2_data(my_stack *stk) {
+    unsigned long hash = 5381;
+    long hash_adder = 0;
+    for (int i = 1; i <= stk->size; i++) {
+        hash = ((hash << 5) + hash) + stk->data[i];
+    }
+    return hash;
 }
