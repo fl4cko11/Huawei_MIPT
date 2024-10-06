@@ -30,9 +30,9 @@ coefs quadro_input() {
 }
 
 void quadro_output(roots *roots) {
-    if (1 - isnan(roots->root1)) { // !isnan
+    if (!isnan(roots->root1)) { // !isnan
         printf("root1: %lf", roots->root1);
-        if (1 - isnan(roots->root2)) {
+        if (!isnan(roots->root2)) {
             printf(", root2: %lf", roots->root2);
         }
         printf("\n");

@@ -1,8 +1,8 @@
-quadro_solution: solver.o in_out.o quadro_main.o
-	gcc solver.o in_out.o quadro_main.o -o quadro_solution -lm
+qs: solver.o in_out.o quadro_main.o
+	gcc solver.o in_out.o quadro_main.o -o qs -lm
 
-quadro_tests: solver.o quadro_tests.o
-	gcc solver.o quadro_tests.o -o quadro_tests -lm
+qt: solver.o quadro_tests.o
+	gcc solver.o quadro_tests.o -o qt -lm
 
 in_out.o: in_out.cpp
 	gcc -c in_out.cpp -o in_out.o
@@ -17,4 +17,4 @@ quadro_tests.o: quadro_tests.cpp
 	gcc -c quadro_tests.cpp -o quadro_tests.o
 
 clean:
-	rm -f *.o quadro_tests quadro_solution
+	rm -f *.o qt qs

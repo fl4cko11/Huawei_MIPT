@@ -6,13 +6,13 @@ typedef struct {
     double root2;
 } roots;
 
-typedef struct{
+typedef struct {
     double a;
     double b;
     double c;
 } coefs;
 
-typedef struct{
+typedef struct {
     coefs test_coefs;
     roots exp_roots;
     const char *testname;
