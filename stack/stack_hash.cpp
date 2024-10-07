@@ -21,3 +21,8 @@ unsigned long djb2_data(my_stack *stk) {
     }
     return hash;
 }
+
+void djb2_stk(my_stack *stk) {
+    stk->hash.hash_data = djb2_data(stk);
+    stk->hash.hash_str = djb2_struct(stk);
+}

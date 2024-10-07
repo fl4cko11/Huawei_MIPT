@@ -8,28 +8,37 @@ void stack_dump(my_stack *stk) {
     printf("hash for struct: %ld\n", stk->hash.hash_str);
     printf("hash for data: %ld\n", stk->hash.hash_data);
     printf("adress of 1st elem of stk: %p\n", stk->data);
-    printf("size of stk: %ld\n", stk->size - 1);
-    printf("capasity of stk: %ld\n", stk->capacity);
+    printf("size of stk: %lu\n", stk->size);
+    printf("capasity of stk (with canary in index: 0 and %lu): %lu\n", stk->capacity -1, stk->capacity);
+
     printf("stk wo canary: ");
-    for (int i = 1; i < stk->size; i++) {
-        if (stk->data[i] != CANARY_VALUE) {
-            printf("%f ", stk->data[i]);
-        }
+    for (int i = 1; i < stk->size + 1; i++) {
+        printf("%f ", stk->data[i]);
     }
     printf("\n");
-    printf("poisoned value (index in stk = %ld) %f\n", stk->size - 1, stk->data[stk->size]);
-    if (stk->capacity == 2) {}
-    else printf("another poisoned value (index in stk = %ld) %f\n", stk->capacity - 2 - 1, stk->data[stk->capacity - 2]);
+
+    if (stk->data[stk->size + 1] != canary) {
+        printf("poisoned value (index in stk = %lu) %f\n", stk->size, stk->data[stk->size + 1]);
+    }
+
+    if (stk->capacity - 2 != 0 && isnan(stk->data[stk->capacity - 2])) {
+        printf("another poisoned value (index in stk = %lu) %f\n", stk->capacity - 2 - 1, stk->data[stk->capacity - 2]);
+    }
+
     if (is_poisoned(stk->popped)){
         printf("popped elem: %f\n", stk->popped);
     }
+
     printf("\n");
     printf("\n");
 }
 
 void stack_error(my_stack *stk) {
     int is_fatal = 0;
-    assert(stk!=nullptr);
+    if (stk == nullptr) {
+        printf("stk ptr error, exit...");
+        exit(-1);
+    }
 
     if (stk->canary_start != CANARY_VALUE) {
         printf("Left Canary of struct changed!\n");
@@ -66,12 +75,12 @@ void stack_error(my_stack *stk) {
         is_fatal = 1;
     }
 
-    if (stk->size > stk->capacity) {
+    if (stk->size > stk->capacity + 1) {
         printf("size more cap!?\n");
         is_fatal = 1;
     }
 
-    if (stk->size < 1) {
+    if (stk->size < 0) {
         printf("size value erroe\n");
         is_fatal = 1;
     }
@@ -83,10 +92,5 @@ void stack_error(my_stack *stk) {
 
     if (is_fatal == 1) {
         exit(-1);
-    }
-
-    else {
-        printf("ALL GOOD...\n");
-        printf("\n");
     }
 }
