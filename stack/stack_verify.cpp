@@ -40,12 +40,12 @@ void stack_error(my_stack *stk) {
         exit(-1);
     }
 
-    if (stk->canary_start != CANARY_VALUE) {
+    if (stk->canary_start != canary) {
         printf("Left Canary of struct changed!\n");
         is_fatal = 1;
     }
 
-    if (stk->canary_end != CANARY_VALUE) {
+    if (stk->canary_end != canary) {
         printf("Right Canary of struct changed!\n");
         is_fatal = 1;
     }
@@ -55,12 +55,12 @@ void stack_error(my_stack *stk) {
         is_fatal = 1;
     }
 
-    if (stk->data[0] != CANARY_VALUE) {
+    if (stk->data[0] != canary) {
         printf("Left Canary of data changed!\n");
         is_fatal = 1;
     }
 
-    if (stk->data[stk->capacity - 1] != CANARY_VALUE) {
+    if (stk->data[stk->capacity - 1] != canary) {
         printf("Right Canary of data changed!\n");
         is_fatal = 1;
     }
