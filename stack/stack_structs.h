@@ -7,9 +7,8 @@
 #include <math.h>
 #include <assert.h>
 #include <stdint.h>
-#define CANARY_VALUE 0xDEDA
 
-const int canary = CANARY_VALUE;
+const int canary = 0xDEDA;
 typedef double stackelem_t;
 typedef double poisoned_stackelem_t;
 const poisoned_stackelem_t poisoned_stackelem = NAN;
