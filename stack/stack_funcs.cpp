@@ -17,7 +17,7 @@ void stack_ctor(my_stack *stk) {
     stack_dump(stk); 
 }
 
-void realloc_stack(my_stack *stk) {
+static void realloc_stack(my_stack *stk) {
     printf("start realloc stk...\n");
     stack_error(stk);
     if (stk->size >= stk->capacity - 2) {
