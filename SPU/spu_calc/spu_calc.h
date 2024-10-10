@@ -4,8 +4,10 @@
 #include <ctype.h>
 #include "spu_calc_structs.h"
 
-void spu_code_buffer_ctor(char *pathname, my_SPU *spu);
+size_t number_of_int_in_file(FILE *fp);
 
-void run(char *argv);
+void spu_code_buffer_ctor(char *pathname, my_SPU *spu, char *logname);
+
+void run(char *codefilename, char *logname);
 
 #endif

@@ -10,7 +10,7 @@ size_t number_of_int_in_file(FILE *fp) {
     return count;
 }
 
-void spu_code_buffer_ctor(char *pathname, my_SPU *spu) {
+void spu_code_buffer_ctor(char *pathname, my_SPU *spu, char *logname) {
     if (pathname == nullptr) {
         printf ("pathname err");
         exit(-1);
@@ -26,9 +26,15 @@ void spu_code_buffer_ctor(char *pathname, my_SPU *spu) {
         exit(-1);
     }
 
+    FILE *log_file = fopen(logname, "a");
+    if (log_file == NULL) {
+        perror("[stk] Error opening log file");
+        return;
+    }
+
     // Выделяем память для буфера
     spu->size_cb = number_of_int_in_file(fp);
-    printf("size code buffer: %ld\n", spu->size_cb);
+    fprintf(log_file, "size code buffer: %ld\n", spu->size_cb);
     spu->code_buffer = (int *)calloc(spu->size_cb, sizeof(int));
     if (!spu->code_buffer) {
         perror("No удалось выделить память");
@@ -48,19 +54,23 @@ void spu_code_buffer_ctor(char *pathname, my_SPU *spu) {
         }
     }
     
-    printf("code buffer: ");
+    fprintf(log_file, "code buffer: ");
     for (int i = 0; i < spu->size_cb; i++) {
-        printf("%d ", spu->code_buffer[i]);
+        fprintf(log_file, "%d ", spu->code_buffer[i]);
     }
-    printf("\n");
+    fprintf(log_file, "\n");
+    fprintf(log_file, "\n");
+
+    fclose(fp);
+    fclose(log_file);
 }
 
-void run(char *argv) {
-    my_SPU spu = {};
-    spu_code_buffer_ctor(argv, &spu);
-
+void run(char *codefilename, char *logname) {
     my_stack stk ={};
-    stack_ctor(&stk);
+    stack_ctor(&stk, logname);
+
+    my_SPU spu = {};
+    spu_code_buffer_ctor(codefilename, &spu, logname);
 
     bool if_run = true;
     int ip = 0;
