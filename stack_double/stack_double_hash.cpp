@@ -1,4 +1,4 @@
-#include "stack_hash.h"
+#include "stack_double_hash.h"
 
 unsigned long djb2_struct(my_stack *stk) {
     unsigned long hash = 5381;

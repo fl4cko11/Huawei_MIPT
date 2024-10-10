@@ -1,4 +1,4 @@
-#include "stack_verify.h"
+#include "stack_double_verify.h"
 
 int is_poisoned(stackelem_t se) {
     return (!isnan(se));

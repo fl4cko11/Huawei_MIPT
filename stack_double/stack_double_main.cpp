@@ -1,4 +1,4 @@
-#include "stack_funcs.h"
+#include "stack_double_funcs.h"
 
 int main(){
     my_stack stk = {};

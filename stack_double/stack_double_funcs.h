@@ -1,9 +1,9 @@
-#ifndef STACK_FUNCS_H
-#define STACK_FUNCS_H
+#ifndef STACK_DOUBLE_FUNCS_H
+#define STACK_DOUBLE_FUNCS_H
 
-#include "stack_structs.h"
-#include "stack_hash.h"
-#include "stack_verify.h"
+#include "stack_double_structs.h"
+#include "stack_double_hash.h"
+#include "stack_double_verify.h"
 
 void stack_ctor(my_stack *stk);
 

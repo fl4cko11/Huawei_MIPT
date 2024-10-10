@@ -1,7 +1,7 @@
-#ifndef STACK_HASH_H
-#define STACK_HASH_H
+#ifndef STACK_DOUBLE_HASH_H
+#define STACK_DOUBLE_HASH_H
 
-#include "stack_structs.h"
+#include "stack_double_structs.h"
 
 unsigned long djb2_struct(my_stack *stk);
 

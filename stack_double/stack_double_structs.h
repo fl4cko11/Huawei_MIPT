@@ -1,5 +1,5 @@
-#ifndef STACK_STRUCTS_H
-#define STACK_STRUCTS_H
+#ifndef STACK_DOUBLE_STRUCTS_H
+#define STACK_DOUBLE_STRUCTS_H
 
 #include <stdio.h>
 #include <stdlib.h>

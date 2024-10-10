@@ -1,5 +1,5 @@
-#include "stack_funcs.h"
-#include "stack_verify.h"
+#include "stack_double_funcs.h"
+#include "stack_double_verify.h"
 
 void stack_ctor(my_stack *stk) {
     printf("start ctor\n");
