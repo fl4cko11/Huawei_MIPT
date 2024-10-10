@@ -30,7 +30,7 @@ void stack_dump(my_stack *stk) {
         fprintf(log_file, "poisoned value (index in stk = %lu) %f\n", stk->size, stk->data[stk->size + 1]);
     }
 
-    if (stk->capacity - 2 != 0 && isnan(stk->data[stk->capacity - 2])) {
+    if (stk->capacity - 2 != 0 && is_poisoned(stk->data[stk->capacity - 2])) {
         fprintf(log_file, "another poisoned value (index in stk = %lu) %f\n", stk->capacity - 2 - 1, stk->data[stk->capacity - 2]);
     }
 
