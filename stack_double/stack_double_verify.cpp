@@ -7,10 +7,10 @@ int is_poisoned(stackelem_t se) {
     return (!isnan(se));
 }
 
-void stack_dump(my_stack *stk, char *logname) {
-    FILE *log_file = fopen(logname, "a");
+void stack_dump(my_stack *stk) {
+    FILE *log_file = fopen(stk->logname, "a");
     if (log_file == NULL) {
-        perror("Error opening log file");
+        perror("[stk] Error opening log file");
         return;
     }
 
@@ -42,10 +42,10 @@ void stack_dump(my_stack *stk, char *logname) {
     fclose(log_file);
 }
 
-void stack_error(my_stack *stk, char *logname) {
-    FILE *log_file = fopen(logname, "a");
+void stack_error(my_stack *stk) {
+    FILE *log_file = fopen(stk->logname, "a");
     if (log_file == NULL) {
-        perror("Error opening log file");
+        perror("[stk] Error opening log file");
         return;
     }
 

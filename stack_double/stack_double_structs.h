@@ -27,6 +27,7 @@ typedef struct {
     size_t capacity;
     stackelem_t popped;
     stk_hash hash;
+    char *logname;
     size_t canary_end;
 } my_stack;
 
