@@ -125,7 +125,7 @@ void stack_dtor(my_stack *stk) {
     fprintf(log_file, "start dtor!\n");
     stack_error(stk);
     free(stk->data);
-    stk->size = 1;
+    stk->size = 0;
     stk->capacity = reall_factor;
     stk->popped = poisoned_stackelem;
     fprintf(log_file, "end dtor\n");
