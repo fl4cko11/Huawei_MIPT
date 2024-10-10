@@ -1,8 +1,14 @@
 #include "stack_double_funcs.h"
 #include "stack_double_verify.h"
 
-void stack_ctor(my_stack *stk) {
-    printf("start ctor\n");
+void stack_ctor(my_stack *stk, char *logname) {
+    FILE *log_file = fopen(logname, "w"); // Открываем для записи, очищая содержимое
+    if (log_file == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    fprintf(log_file, "start ctor\n");
     stk->canary_start = canary;
     stk->canary_end = canary;
     stk->data = (stackelem_t *)calloc(2, sizeof(stackelem_t));
@@ -12,80 +18,116 @@ void stack_ctor(my_stack *stk) {
     stk->data[stk->capacity - 1] = canary;
     stk->popped = poisoned_stackelem;
     djb2_stk(stk);
-    printf("end ctor!\n");
-    stack_error(stk);
-    stack_dump(stk); 
+    fprintf(log_file, "end ctor!\n");
+    stack_error(stk, logname);
+    stack_dump(stk, logname); 
+
+    fclose(log_file);
 }
 
-static void realloc_stack(my_stack *stk) {
-    printf("start realloc stk...\n");
-    stack_error(stk);
+static void realloc_stack(my_stack *stk, char *logname) {
+    FILE *log_file = fopen(logname, "a");
+    if (log_file == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    fprintf(log_file, "start realloc stk...\n");
+    stack_error(stk, logname);
     if (stk->size >= stk->capacity - 2) {
-        printf("start incr cap...\n");
-        stk->capacity = stk->capacity*reall_factor;
-        stk->data = (stackelem_t *)realloc(stk->data, stk->capacity*sizeof(stackelem_t));
+        fprintf(log_file, "start incr cap...\n");
+        stk->capacity = stk->capacity * reall_factor;
+        stk->data = (stackelem_t *)realloc(stk->data, stk->capacity * sizeof(stackelem_t));
         if (stk->data == nullptr) {
-            printf ("data ptr error! exit...\n");
+            fprintf(log_file, "data ptr error! exit...\n");
+            fclose(log_file);
             exit(-1);
         }
         stk->data[stk->capacity - 1] = canary;
         for (int j = stk->size; j < stk->capacity - 1; j++) {
-            stk->data[j] = poisoned_stackelem; //init NAN like posion and delete old canary
+            stk->data[j] = poisoned_stackelem; // init NAN like poison and delete old canary
         }
         djb2_stk(stk);
-        stack_error(stk);
-        printf("end realloc incr\n");
+        stack_error(stk, logname);
+        fprintf(log_file, "end realloc incr\n");
     }
-
-    else if (stk->size <= ((stk->capacity - 2)%reall_decreaser) && stk->capacity != 4) {
-        printf("start decr cap...\n");
-        stk->capacity = stk->capacity/reall_factor;
-        stk->data = (stackelem_t *)realloc(stk->data, stk->capacity*sizeof(stackelem_t));
+    else if (stk->size <= ((stk->capacity - 2) % reall_decreaser) && stk->capacity != 4) {
+        fprintf(log_file, "start decr cap...\n");
+        stk->capacity = stk->capacity / reall_factor;
+        stk->data = (stackelem_t *)realloc(stk->data, stk->capacity * sizeof(stackelem_t));
         if (stk->data == nullptr) {
-            printf ("data ptr error! exit...\n");
+            fprintf(log_file, "data ptr error! exit...\n");
+            fclose(log_file);
             exit(-1);
         }
         stk->data[stk->capacity - 1] = canary;
         djb2_stk(stk);
-        stack_error(stk);
-        printf("end realloc decr\n");
+        stack_error(stk, logname);
+        fprintf(log_file, "end realloc decr\n");
     }
+
+    fclose(log_file);
 }
 
-void stack_push(my_stack *stk, stackelem_t elem) { //newest in end
-    printf("start pushing...\n");
-    stack_error(stk);
+void stack_push(my_stack *stk, stackelem_t elem, char *logname) { // newest in end
+    FILE *log_file = fopen(logname, "a");
+    if (log_file == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    fprintf(log_file, "start pushing...\n");
+    stack_error(stk, logname);
     stk->size++;
     djb2_stk(stk);
-    realloc_stack(stk); //stack_error inside
+    realloc_stack(stk, logname); // stack_error inside
     stk->data[stk->size] = elem;
     djb2_stk(stk);
-    stack_error(stk);
-    printf("end pushing!\n");
-    stack_dump(stk);
+    stack_error(stk, logname);
+    fprintf(log_file, "end pushing!\n");
+    stack_dump(stk, logname);
+
+    fclose(log_file);
 }
 
-void stack_pop(my_stack *stk) { //newest from end pop
-    printf("started popping\n");
-    stack_error(stk);
+void stack_pop(my_stack *stk, char *logname) { // newest from end pop
+    FILE *log_file = fopen(logname, "a");
+    if (log_file == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    fprintf(log_file, "started popping\n");
+    stack_error(stk, logname);
     if (stk->data[stk->size] != canary) {
         stk->popped = stk->data[stk->size];
         stk->data[stk->size] = poisoned_stackelem;
         stk->size--;
         djb2_stk(stk);
-        realloc_stack(stk); //stack_error inside
-        printf("end pop!\n");
-        stack_dump(stk);
+        realloc_stack(stk, logname); // stack_error inside
+        fprintf(log_file, "end pop!\n");
+        stack_dump(stk, logname);
+    } else {
+        fprintf(log_file, "nothing to pop...\n");
     }
-    else printf("nothing to pop...\n");
+
+    fclose(log_file);
 }
 
-void stack_dtor(my_stack *stk) {
-    printf("start dtor!\n");
-    stack_error(stk);
+void stack_dtor(my_stack *stk, char *logname) {
+    FILE *log_file = fopen(logname, "a");
+    if (log_file == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    fprintf(log_file, "start dtor!\n");
+    stack_error(stk, logname);
     free(stk->data);
     stk->size = 1;
     stk->capacity = reall_factor;
     stk->popped = poisoned_stackelem;
-    printf("end dtor\n");
+    fprintf(log_file, "end dtor\n");
+
+    fclose(log_file);
 }
