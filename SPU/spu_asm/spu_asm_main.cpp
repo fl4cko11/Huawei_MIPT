@@ -31,13 +31,13 @@ void command_cmp_and_writer(char cmd[], FILE *fp2) {
         fprintf(fp2, "%d ", 8);
     } 
     else if (strcmp("out", str_part_of_cmd) == 0) {
-        fprintf(fp2, "%d ", 10);
+        fprintf(fp2, "%d ", 9);
     } 
     else if (strcmp("in", str_part_of_cmd) == 0) {
-        fprintf(fp2, "%d ", 11);
+        fprintf(fp2, "%d ", 10);
     } 
     else if (strcmp("dump", str_part_of_cmd) == 0) {
-        fprintf(fp2, "%d ", 12);
+        fprintf(fp2, "%d ", 11);
     } 
     else if (strcmp("hlt", str_part_of_cmd) == 0) {
         fprintf(fp2, "%d ", 0);
@@ -101,7 +101,7 @@ void command_cmp_and_writer(char cmd[], FILE *fp2) {
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        printf("Usage: %s <input_file> <full path to output_file>\n", argv[0]);
+        printf("Usage: %s <full path to input_file> <full path to output_file>\n", argv[0]);
         return 1;
     }
 
