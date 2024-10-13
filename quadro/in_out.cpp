@@ -1,5 +1,9 @@
 #include "in_out.h"
 
+void buffer_clean() {
+    while (getchar() != '\n');
+}
+
 double coef_input(char coef_name) {
     double coef = NAN; // init
     int result = 0;
@@ -11,10 +15,9 @@ double coef_input(char coef_name) {
         } 
         else {
             printf("Not correct input, try again!\n");
-            while (getchar() != '\n'); // очистка буфера ввода
+            buffer_clean();
         }
     }
-
     return coef;
 }
 
@@ -27,13 +30,13 @@ coefs quadro_input() {
 }
 
 void quadro_output(roots *roots) {
-    if (1 - isnan(roots->root1)) {
+    if (!isnan(roots->root1)) { // !isnan
         printf("root1: %lf", roots->root1);
-        if (1 - isnan(roots->root2)) {
+        if (!isnan(roots->root2)) {
             printf(", root2: %lf", roots->root2);
         }
         printf("\n");
-    } 
+    }
     else {
         printf("no roots\n");
     }
