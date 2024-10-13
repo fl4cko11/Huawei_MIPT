@@ -8,7 +8,7 @@ bool is_equal(const double d1, const double d2) {
     else if (isnan(d1) && !isnan(d2) || !isnan (d1) && isnan(d2)) {
         return 0;
     }
-    else if (is_zero(d1-d2)) {
+    else if (is_zero(d1 - d2)) {
         return 1;
     }
     else return 0; 
