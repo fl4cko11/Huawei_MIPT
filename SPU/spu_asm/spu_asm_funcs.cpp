@@ -70,49 +70,49 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
 
     if (sscanf(cmd, "%s %d", str_part_of_cmd, &temp) == 2) { //команды с численным аргументом
         if (strcmp("push", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 1);
             ip_asm += 2;
         }
         else if (strcmp("jump", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 12);
             ip_asm += 2;
         }
         else if (strcmp("ja", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 13);
             ip_asm += 2;
         }
         else if (strcmp("jae", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 14);
             ip_asm += 2;
         }
         else if (strcmp("jb", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 15);
             ip_asm += 2;
         }
         else if (strcmp("jbe", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 16);
             ip_asm += 2;
         }
         else if (strcmp("je", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 17);
             ip_asm += 2;
         }
         else if (strcmp("jne", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 18);
             ip_asm += 2;
@@ -132,63 +132,63 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
         bool if_label = false;
 
         if (strcmp("pushr", str_part_of_cmd) == 0) { // число из регистра в стк
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 19);
             ip_asm += 2;
             if_reg = true;
         }
         else if (strcmp("popr", str_part_of_cmd) == 0) { // число из стека в регистр
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 20);
             ip_asm += 2;
             if_reg = true;
         }
         else if (strcmp("jump", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 12);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("ja", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 13);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("jae", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 14);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("jb", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 15);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("jbe", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 16);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("je", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 17);
             ip_asm += 2;
             if_label = true;
         }
         else if (strcmp("jne", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d ", 18);
             ip_asm += 2;
@@ -233,73 +233,73 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
         int ind_of_1st_spec = first_spec_symb_in_str(cmd);
 
         if (strcmp("hlt", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 0);
             ip_asm++;
         } 
         else if (strcmp("add", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 2);
             ip_asm++;
         } 
         else if (strcmp("sub", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 3);
             ip_asm++;
         } 
         else if (strcmp("div", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 4);
             ip_asm++;
         } 
         else if (strcmp("mul", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 5);
             ip_asm++;
         } 
         else if (strcmp("sqrt", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 6);
             ip_asm++;
         } 
         else if (strcmp("sin", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 7);
             ip_asm++;
         } 
         else if (strcmp("cos", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 8);
             ip_asm++;
         } 
         else if (strcmp("out", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 9);
             ip_asm++;
         } 
         else if (strcmp("in", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 10);
             ip_asm++;
         } 
         else if (strcmp("dump", str_part_of_cmd) == 0) {
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fprintf(program_code, "%d\n", 11);
             ip_asm++;
         }
         else if (str_part_of_cmd[ind_of_1st_spec] == ':') { // считка меток
-            fprintf(log_file, "[ASM] stroka: %d\n", ip_asm);
+            fprintf(log_file, "[ASM] ip_asm: %d\n", ip_asm);
             fprintf(log_file, "[ASM] cmd: %s\n", cmd);
             fclose(log_file);
             if (label_table->size <= num_of_labels) {
