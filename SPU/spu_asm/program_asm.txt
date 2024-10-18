@@ -1,5 +1,7 @@
-push 30
-push 70
+push 5
+push 20
+next:
 add
-out
+push 2
+ja next:
 hlt

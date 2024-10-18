@@ -1,0 +1,29 @@
+[ASM] label table (names): (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) 
+                  (ip for names): -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+[ASM] lable table size: 0
+
+[ASM] stroka: 0
+[ASM] cmd: push 5
+
+[ASM] stroka: 2
+[ASM] cmd: push 20
+
+[ASM] stroka: 4
+[ASM] cmd: next:
+
+[ASM] label table (names): next: (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) 
+                  (ip for names): 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+[ASM] lable table size: 1
+
+[ASM] stroka: 5
+[ASM] cmd: add
+
+[ASM] stroka: 6
+[ASM] cmd: push 2
+
+[ASM] stroka: 8
+[ASM] cmd: ja next:
+
+[ASM] stroka: 10
+[ASM] cmd: hlt
+

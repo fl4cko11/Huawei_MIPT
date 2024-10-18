@@ -1,5 +1,8 @@
-asm: spu_asm_main.o
-	gcc spu_asm_main.o -o asm
+asm: spu_asm_funcs.o spu_asm_main.o
+	gcc spu_asm_funcs.o spu_asm_main.o -o asm
+
+spu_asm_funcs.o: /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_funcs.cpp
+	gcc -c /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_funcs.cpp -o spu_asm_funcs.o
 
 spu_asm_main.o: /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_main.cpp
 	gcc -c /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_main.cpp -o spu_asm_main.o

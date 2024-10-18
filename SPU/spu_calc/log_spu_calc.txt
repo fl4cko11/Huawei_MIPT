@@ -1,0 +1,1569 @@
+[SPU] start ctor
+[STACK] start ctor
+[STACK] hash for struct: 102964080849120119
+[STACK] hash for data: 5381
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 0
+[STACK] capasity of stk (with canary in index: 0 and 1): 2
+[STACK] stk wo canary: 
+[STACK] end ctor!
+[SPU] size code buffer: 24
+[SPU] code buffer: 1 0 20 0 19 0 19 0 5 9 19 0 1 1 2 20 0 19 0 1 10 15 4 0 
+[SPU] ip value: 0
+[SPU] registers: 0 0 0 0 
+
+[SPU] end ctor
+
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[SPU] ip value: 2
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120121
+[STACK] hash for data: 5381
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 0
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 
+[STACK] poisoned value (index in stk = 0) 666
+[STACK] popped elem: 0
+[SPU] ip value: 4
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 0
+[SPU] ip value: 6
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859909
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 0 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 0
+[SPU] ip value: 8
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 0
+[STACK] hash for struct: 102964080849120121
+[STACK] hash for data: 5381
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 0
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 
+[STACK] poisoned value (index in stk = 0) 666
+[STACK] popped elem: 0
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 0
+[SPU] ip value: 9
+[SPU] registers: 0 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859909
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 0 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 0
+[SPU] ip value: 12
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193376998
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 0 1 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 0
+[SPU] ip value: 14
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859909
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 0 
+[STACK] another poisoned value (index in stk = 1) 0
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 0
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 0
+[SPU] ip value: 15
+[SPU] registers: 0 0 0 0 
+
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 1
+[SPU] ip value: 17
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 1
+[SPU] ip value: 19
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377040
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 10 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 1
+[SPU] ip value: 21
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 1
+[SPU] ip value: 4
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 1
+[SPU] ip value: 6
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377031
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 1 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 1
+[SPU] ip value: 8
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120154
+[STACK] hash for data: 177573
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 1
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 
+[STACK] poisoned value (index in stk = 1) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120191
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 
+[STACK] poisoned value (index in stk = 2) 666
+[STACK] popped elem: 1
+[SPU] ip value: 9
+[SPU] registers: 1 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377031
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 1 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 1
+[SPU] ip value: 12
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442024
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 1 1 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 1
+[SPU] ip value: 14
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377031
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 1 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 1
+[SPU] ip value: 15
+[SPU] registers: 1 0 0 0 
+
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 2
+[SPU] ip value: 17
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 2
+[SPU] ip value: 19
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442066
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 10 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 2
+[SPU] ip value: 21
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 2
+[SPU] ip value: 4
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 2
+[SPU] ip value: 6
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442058
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 2 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 2
+[SPU] ip value: 8
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 2 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 2
+[STACK] hash for struct: 102964080849120187
+[STACK] hash for data: 5859910
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 2
+[STACK] capasity of stk (with canary in index: 0 and 3): 4
+[STACK] stk wo canary: 0 1 
+[STACK] another poisoned value (index in stk = 1) 1
+[STACK] popped elem: 2
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 2
+[SPU] ip value: 9
+[SPU] registers: 2 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442124
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 2 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 2
+[SPU] ip value: 12
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120290
+[STACK] hash for data: 210587590093
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 2 1 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 2
+[SPU] ip value: 14
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442124
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 2 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 2
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442125
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 2
+[SPU] ip value: 15
+[SPU] registers: 2 0 0 0 
+
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 3
+[SPU] ip value: 17
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442125
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 3
+[SPU] ip value: 19
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120290
+[STACK] hash for data: 210587590135
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 10 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 3
+[SPU] ip value: 21
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442125
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 3
+[SPU] ip value: 4
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442125
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 3
+[SPU] ip value: 6
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120290
+[STACK] hash for data: 210587590128
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 3 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 3
+[SPU] ip value: 8
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442125
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 3 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 3
+[STACK] hash for struct: 102964080849120224
+[STACK] hash for data: 193377034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 3
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 
+[STACK] poisoned value (index in stk = 3) 666
+[STACK] popped elem: 3
+[STACK] hash for struct: 102964080849120257
+[STACK] hash for data: 6381442131
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 9 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 3
+[SPU] ip value: 9
+[SPU] registers: 3 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120290
+[STACK] hash for data: 210587590326
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 7): 8
+[STACK] stk wo canary: 0 1 4 9 3 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 3
+[SPU] ip value: 12
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390480759
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 3 1 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 3
+[SPU] ip value: 14
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590326
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 3 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120265
+[STACK] hash for data: 6381442131
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 3
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590327
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 3
+[SPU] ip value: 15
+[SPU] registers: 3 0 0 0 
+
+[STACK] hash for struct: 102964080849120265
+[STACK] hash for data: 6381442131
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 4
+[SPU] ip value: 17
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590327
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 4
+[SPU] ip value: 19
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390480801
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 10 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 4
+[SPU] ip value: 21
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590327
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120265
+[STACK] hash for data: 6381442131
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 4
+[SPU] ip value: 4
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590327
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 4
+[SPU] ip value: 6
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390480795
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 4 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 4
+[SPU] ip value: 8
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590327
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 4 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 4
+[STACK] hash for struct: 102964080849120265
+[STACK] hash for data: 6381442131
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 4
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 
+[STACK] poisoned value (index in stk = 4) 666
+[STACK] popped elem: 4
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590339
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 4
+[SPU] ip value: 9
+[SPU] registers: 4 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481191
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 4 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 4
+[SPU] ip value: 12
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885879304
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 4 1 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 4
+[SPU] ip value: 14
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481191
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 4 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590339
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 4
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481192
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 4
+[SPU] ip value: 15
+[SPU] registers: 4 0 0 0 
+
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590339
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 5
+[SPU] ip value: 17
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481192
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 5
+[SPU] ip value: 19
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885879346
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 10 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 5
+[SPU] ip value: 21
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481192
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590339
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 5
+[SPU] ip value: 4
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481192
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 5
+[SPU] ip value: 6
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885879341
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 5 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 5
+[SPU] ip value: 8
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481192
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 5 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 5
+[STACK] hash for struct: 102964080849120298
+[STACK] hash for data: 210587590339
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 5
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 
+[STACK] poisoned value (index in stk = 5) 666
+[STACK] popped elem: 5
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481212
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 5
+[SPU] ip value: 9
+[SPU] registers: 5 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880001
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 5 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 5
+[SPU] ip value: 12
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234040034
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 5 1 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 5
+[SPU] ip value: 14
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880001
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 5 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481212
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 5
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880002
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 5
+[SPU] ip value: 15
+[SPU] registers: 5 0 0 0 
+
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481212
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 6
+[SPU] ip value: 17
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880002
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 6
+[SPU] ip value: 19
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234040076
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 10 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 6
+[SPU] ip value: 21
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880002
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481212
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 6
+[SPU] ip value: 4
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880002
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 6
+[SPU] ip value: 6
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234040072
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 6 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 6
+[SPU] ip value: 8
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880002
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 6 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 6
+[STACK] hash for struct: 102964080849120331
+[STACK] hash for data: 6949390481212
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 6
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 
+[STACK] poisoned value (index in stk = 6) 666
+[STACK] popped elem: 6
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 6
+[SPU] ip value: 9
+[SPU] registers: 6 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041062
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 6 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 6
+[SPU] ip value: 12
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723355047
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 6 1 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 6
+[SPU] ip value: 14
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041062
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 6 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 6
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041063
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 6
+[SPU] ip value: 15
+[SPU] registers: 6 0 0 0 
+
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 7
+[SPU] ip value: 17
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041063
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 7
+[SPU] ip value: 19
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723355089
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 10 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 7
+[SPU] ip value: 21
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041063
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 7
+[SPU] ip value: 4
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041063
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 7
+[SPU] ip value: 6
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723355086
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 7 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 7
+[SPU] ip value: 8
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041063
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 7 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 7
+[STACK] hash for struct: 102964080849120364
+[STACK] hash for data: 229329885880032
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 7
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 
+[STACK] poisoned value (index in stk = 7) 666
+[STACK] popped elem: 7
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041105
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 7
+[SPU] ip value: 9
+[SPU] registers: 7 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356472
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 7 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 7
+[SPU] ip value: 12
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870763577
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 7 1 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 7
+[SPU] ip value: 14
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356472
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 7 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041105
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 7
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356473
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 7
+[SPU] ip value: 15
+[SPU] registers: 7 0 0 0 
+
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041105
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 8
+[SPU] ip value: 17
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356473
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 8
+[SPU] ip value: 19
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870763619
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 10 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 8
+[SPU] ip value: 21
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356473
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041105
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 8
+[SPU] ip value: 4
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356473
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 8
+[SPU] ip value: 6
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870763617
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 8 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 8
+[SPU] ip value: 8
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356473
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 8 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 8
+[STACK] hash for struct: 102964080849120397
+[STACK] hash for data: 7567886234041105
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 8
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 
+[STACK] poisoned value (index in stk = 8) 666
+[STACK] popped elem: 8
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356529
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 8
+[SPU] ip value: 9
+[SPU] registers: 8 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765465
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 8 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 8
+[SPU] ip value: 12
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908013894
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 8 1 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 8
+[SPU] ip value: 14
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765465
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 8 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356529
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 8
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765466
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 8
+[SPU] ip value: 15
+[SPU] registers: 8 0 0 0 
+
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356529
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 9
+[SPU] ip value: 17
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765466
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 9
+[SPU] ip value: 19
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908013852
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 10 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 9
+[SPU] ip value: 21
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765466
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356529
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 9
+[SPU] ip value: 4
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765466
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 9
+[SPU] ip value: 6
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908013853
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 9 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 9
+[SPU] ip value: 8
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765466
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 9 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 9
+[STACK] hash for struct: 102964080849120430
+[STACK] hash for data: 249740245723356529
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 9
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 
+[STACK] poisoned value (index in stk = 9) 666
+[STACK] popped elem: 9
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765538
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 9
+[SPU] ip value: 9
+[SPU] registers: 9 0 0 0 
+
+[SPU] ip value: 10
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908011477
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 9 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 9
+[SPU] ip value: 12
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120529
+[STACK] hash for data: -8649153336287965812
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 12
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 9 1 
+[STACK] poisoned value (index in stk = 12) 666
+[STACK] popped elem: 9
+[SPU] ip value: 14
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908011477
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 9 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 1
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765538
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 9
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908011476
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 10 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 9
+[SPU] ip value: 15
+[SPU] registers: 9 0 0 0 
+
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765538
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 10
+[SPU] ip value: 17
+[SPU] registers: 10 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908011476
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 10 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 10
+[SPU] ip value: 19
+[SPU] registers: 10 0 0 0 
+
+[STACK] hash for struct: 102964080849120529
+[STACK] hash for data: -8649153336287965770
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 12
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 10 10 
+[STACK] poisoned value (index in stk = 12) 666
+[STACK] popped elem: 10
+[SPU] ip value: 21
+[SPU] registers: 10 0 0 0 
+
+[STACK] hash for struct: 102964080849120496
+[STACK] hash for data: -4734033512908011476
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 11
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 10 
+[STACK] poisoned value (index in stk = 11) 666
+[STACK] popped elem: 10
+[STACK] hash for struct: 102964080849120463
+[STACK] hash for data: 8241428108870765538
+[STACK] adress of 1st elem of stk: 0x55fdf394d490
+[STACK] size of stk: 10
+[STACK] capasity of stk (with canary in index: 0 and 15): 16
+[STACK] stk wo canary: 0 1 4 9 16 25 36 49 64 81 
+[STACK] poisoned value (index in stk = 10) 666
+[STACK] popped elem: 10
+[SPU] ip value: 23
+[SPU] registers: 10 0 0 0 
+
+[STACK] start dtor!
+[STACK] end dtor
