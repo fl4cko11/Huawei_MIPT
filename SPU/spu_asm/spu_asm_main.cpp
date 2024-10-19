@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc < 4) {
-        printf("Usage: %s <full path to input_file> <full path to output_file> <name of asm_log_file>\n", argv[0]);
+        printf("Usage: %s <full path to asm_file> <full path to code_file> <name or full path of asm_log_file>\n", argv[0]);
         return 1;
     }
 
@@ -19,8 +19,8 @@ int main(int argc, char *argv[]) {
         exit(-1);
     }
 
-    FILE *for_clean = fopen(argv[3], "w");
-    fclose (for_clean);
+    FILE *for_cleanup_log = fopen(argv[3], "w");
+    fclose (for_cleanup_log);
 
     asm_lable_table label_table = {};
     lable_table_ctor(&label_table, argv[3]);
@@ -35,6 +35,10 @@ int main(int argc, char *argv[]) {
     }
 
     while (fgets(cmd, 50, prorgam_asm) != nullptr) {
+        size_t len = strlen(cmd);
+        if (len > 0 && cmd[len - 1] == '\n') {
+            cmd[len - 1] = '\0';
+        }
         ip_asm = command_cmp_and_writer(cmd, program_code, &label_table, ip_asm);
     }
 

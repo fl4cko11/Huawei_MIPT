@@ -2,28 +2,28 @@
                   (ip for names): -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
 [ASM] lable table size: 0
 
-[ASM] stroka: 0
+[ASM] ip_asm: 0
 [ASM] cmd: push 5
+[ASM] command part of cmd: push
+[ASM] arg part of cmd: 5
 
-[ASM] stroka: 2
-[ASM] cmd: push 20
+[ASM] ip_asm: 3
+[ASM] cmd: pop
+[ASM] command part of cmd: pop
+[ASM] arg part of cmd: 
 
-[ASM] stroka: 4
-[ASM] cmd: next:
+[ASM] ip_asm: 5
+[ASM] cmd: pop [ax]
+[ASM] command part of cmd: pop
+[ASM] arg part of cmd: [ax]
 
-[ASM] label table (names): next: (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) 
-                  (ip for names): 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-[ASM] lable table size: 1
+[ASM] ip_asm: 8
+[ASM] cmd: pop [5+ax]
+[ASM] command part of cmd: pop
+[ASM] arg part of cmd: [5+ax]
 
-[ASM] stroka: 5
-[ASM] cmd: add
-
-[ASM] stroka: 6
-[ASM] cmd: push 2
-
-[ASM] stroka: 8
-[ASM] cmd: ja next:
-
-[ASM] stroka: 10
+[ASM] ip_asm: 12
 [ASM] cmd: hlt
+[ASM] command part of cmd: hlt
+[ASM] arg part of cmd: 
 

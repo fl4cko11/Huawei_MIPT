@@ -1,7 +1,5 @@
 push 5
-push 20
-next:
-add
-push 2
-ja next:
+pop
+pop [ax]
+pop [5+ax]
 hlt

@@ -4,6 +4,7 @@
 #include "/home/vlados/GitRepos/Huawei/stack_int/stack_int_funcs.h"
 
 const int num_of_registers = 4;
+const int RAM_size = 10;
 
 typedef enum {
     hlt = 0,
@@ -25,8 +26,7 @@ typedef enum {
     jbe = 16,
     je = 17,
     jne = 18,
-    pushr = 19,
-    popr = 20
+    pop = 19
 } my_machine_code;
 
 typedef struct {
@@ -36,6 +36,7 @@ typedef struct {
     my_stack stk;
     stackelem_t *regist;
     char *logname;
+    stackelem_t *RAM;
 } my_SPU;
 
 #endif

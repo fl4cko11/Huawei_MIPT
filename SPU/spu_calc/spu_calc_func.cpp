@@ -1,4 +1,4 @@
-#include "spu_calc.h"
+#include "spu_calc_funcs.h"
 
 size_t number_of_int_in_file(FILE *fp) {
     if (fp == nullptr) {
@@ -104,6 +104,10 @@ void spu_ctor(my_SPU *spu, char *codefilename, char *logname) {
     if (spu->regist == nullptr) {
         printf("[SPU] regist ctor error");
     }
+    spu->RAM = (stackelem_t *)calloc(RAM_size, sizeof(stackelem_t));
+    if (spu->regist == nullptr) {
+        printf("[SPU] RAM ctor error");
+    }
     fclose(log_file);
     
     spu_dump(spu);
@@ -129,8 +133,39 @@ void spu_dump(my_SPU *spu) {
     for (int i = 0; i < num_of_registers; i++) {
         fprintf(log_file, "%d ", spu->regist[i]);
     }
+    fprintf(log_file, "\n");
+    fprintf(log_file, "[SPU] RAM: ");
+    for (int i = 0; i < RAM_size; i++) {
+        fprintf(log_file, "%d ", spu->RAM[i]);
+    }
     fprintf(log_file, "\n\n");
     fclose(log_file);
+}
+
+stackelem_t spu_get_push_arg(my_SPU *spu) {
+    spu->ip++; // к типу операции
+    int argtype = spu->code_buffer[spu->ip++];
+    stackelem_t result = 0;
+    if (argtype & 1) result = spu->code_buffer[spu->ip++]; //const
+    if (argtype & 2) result += spu->regist[spu->ip++]; //refister
+    if (argtype & 4) result = spu->RAM[result]; //[const+register]
+    return result;
+}
+
+int *spu_get_pop_addr(my_SPU *spu) {
+    spu->ip++; // к типу операции
+    int argtype = spu->code_buffer[spu->ip++];
+    int ram_indx = 0;
+    int *addr = nullptr;
+    if (argtype & 1) return addr;
+    if (argtype & 2) addr = &spu->regist[spu->ip++];
+    if (argtype & 4) {
+        addr = nullptr;
+        spu->ip--;
+        ram_indx = spu->code_buffer[spu->ip++] + spu->code_buffer[spu->ip++];
+        addr = &spu->RAM[ram_indx];
+    }
+    return addr;
 }
 
 void run(char *codefilename, char *logname) {
@@ -148,6 +183,7 @@ void run(char *codefilename, char *logname) {
     stackelem_t pop1 = 0;
     stackelem_t pop2 = 0;
     stackelem_t stke = 0;
+    int *addr_where_pop_to = nullptr;
 
     while (if_run) {
         switch (spu.code_buffer[spu.ip]) {
@@ -156,9 +192,14 @@ void run(char *codefilename, char *logname) {
                 if_run = false;
                 break;
             case push:
-                stack_push(&spu.stk, spu.code_buffer[spu.ip + 1]);
-                spu.ip += 2;
+                stack_push(&spu.stk, spu_get_push_arg(&spu)); //getarg changed ip
                 spu_dump(&spu);
+                break;
+            case pop:
+                stack_pop(&spu.stk);
+                pop1 = spu.stk.popped;
+                addr_where_pop_to = spu_get_pop_addr(&spu); //getarg changed ip
+                *addr_where_pop_to = pop1;
                 break;
             case add:
                 stack_pop(&spu.stk);
@@ -302,19 +343,6 @@ void run(char *codefilename, char *logname) {
                     spu.ip = spu.code_buffer[spu.ip + 1];
                 }
                 else spu.ip += 2;
-                spu_dump(&spu);
-                break;
-            case pushr: // из регистра в стк
-                stke = spu.regist[spu.code_buffer[spu.ip + 1]];
-                stack_push(&spu.stk, stke);
-                spu.ip += 2;
-                spu_dump(&spu);
-                break;
-            case popr: // из стека в регистр
-                stack_pop(&spu.stk);
-                pop1 = spu.stk.popped;
-                spu.regist[spu.code_buffer[spu.ip + 1]] = pop1;
-                spu.ip += 2;
                 spu_dump(&spu);
                 break;
         }
