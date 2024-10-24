@@ -1,4 +1,4 @@
-#include "spu_calc.h"
+#include "spu_calc_funcs.h"
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {

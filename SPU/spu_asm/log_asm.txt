@@ -3,24 +3,43 @@
 [ASM] lable table size: 0
 
 [ASM] ip_asm: 0
+[ASM] cmd: func:
+[ASM] command part of cmd: func:
+[ASM] arg part of cmd: 
+
+[ASM] label table (names): func: (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) (null) 
+                  (ip for names): 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+[ASM] lable table size: 1
+
+[ASM] ip_asm: 1
 [ASM] cmd: push 5
 [ASM] command part of cmd: push
 [ASM] arg part of cmd: 5
 
-[ASM] ip_asm: 3
-[ASM] cmd: pop
-[ASM] command part of cmd: pop
+[ASM] ip_asm: 4
+[ASM] cmd: push 7
+[ASM] command part of cmd: push
+[ASM] arg part of cmd: 7
+
+[ASM] ip_asm: 7
+[ASM] cmd: add
+[ASM] command part of cmd: add
 [ASM] arg part of cmd: 
 
-[ASM] ip_asm: 5
-[ASM] cmd: pop [ax]
-[ASM] command part of cmd: pop
-[ASM] arg part of cmd: [ax]
-
 [ASM] ip_asm: 8
-[ASM] cmd: pop [5+ax]
-[ASM] command part of cmd: pop
-[ASM] arg part of cmd: [5+ax]
+[ASM] cmd: return
+[ASM] command part of cmd: return
+[ASM] arg part of cmd: 
+
+[ASM] ip_asm: 9
+[ASM] cmd: start_
+[ASM] command part of cmd: start_
+[ASM] arg part of cmd: 
+
+[ASM] ip_asm: 10
+[ASM] cmd: call func:
+[ASM] command part of cmd: call
+[ASM] arg part of cmd: func:
 
 [ASM] ip_asm: 12
 [ASM] cmd: hlt

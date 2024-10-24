@@ -1,5 +1,8 @@
+func:
 push 5
-pop
-pop [ax]
-pop [5+ax]
+push 7
+add
+return
+start_
+call func:
 hlt

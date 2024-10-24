@@ -26,7 +26,10 @@ typedef enum {
     jbe = 16,
     je = 17,
     jne = 18,
-    pop = 19
+    pop = 19,
+    call = 20,
+    cmd_return = 21,
+    start = 22
 } my_machine_code;
 
 typedef struct {
@@ -34,6 +37,7 @@ typedef struct {
     size_t size_cb;
     int ip;
     my_stack stk;
+    my_stack stk_func;
     stackelem_t *regist;
     char *logname;
     stackelem_t *RAM;

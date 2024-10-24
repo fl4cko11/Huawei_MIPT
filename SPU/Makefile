@@ -7,8 +7,8 @@ spu_asm_funcs.o: /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_funcs.cpp
 spu_asm_main.o: /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_main.cpp
 	gcc -c /home/vlados/GitRepos/Huawei/SPU/spu_asm/spu_asm_main.cpp -o spu_asm_main.o
 
-calc_int: stack_int_hash.o stack_int_verify.o stack_int_funcs.o spu_calc_funcs.o spu_calc_main.o
-	gcc stack_int_hash.o stack_int_verify.o stack_int_funcs.o spu_calc_funcs.o spu_calc_main.o -o calc_int -lm
+calc: stack_int_hash.o stack_int_verify.o stack_int_funcs.o spu_calc_funcs.o spu_calc_main.o
+	gcc stack_int_hash.o stack_int_verify.o stack_int_funcs.o spu_calc_funcs.o spu_calc_main.o -o calc -lm
 
 stack_int_hash.o: /home/vlados/GitRepos/Huawei/stack_int/stack_int_hash.cpp
 	gcc -c /home/vlados/GitRepos/Huawei/stack_int/stack_int_hash.cpp -o stack_int_hash.o
@@ -26,4 +26,4 @@ spu_calc_main.o: /home/vlados/GitRepos/Huawei/SPU/spu_calc/spu_calc_main.cpp
 	gcc -c /home/vlados/GitRepos/Huawei/SPU/spu_calc/spu_calc_main.cpp -o spu_calc_main.o
 
 clean:
-	rm -f *.o asm calc_int
+	rm -f *.o asm calc

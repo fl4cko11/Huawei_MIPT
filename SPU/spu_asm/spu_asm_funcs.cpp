@@ -533,6 +533,31 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
                 }
             }
         }
+        else if (strcmp("call", command_part_of_cmd) == 0) {
+            ptr_on_dbldot = strchr(arg_part_of_cmd, ':');
+            if (ptr_on_dbldot != nullptr) { //если есть двоеточие у аргумента
+                fprintf(program_code, "%d ", 20);
+                ip_label = label_to_ip(arg_part_of_cmd, label_table);
+                if (ip_label == -1) {
+                    printf("[ASM] not existing label...\n");
+                    exit(-1);
+                }
+                fprintf(program_code, "%d\n", ip_label);
+                ip_asm += 2;
+            }
+            else {
+                printf("[ASM] call syntax error...\n");
+                exit(-1);
+            }
+        }
+        else if (strcmp("return", command_part_of_cmd) == 0) {
+            fprintf(program_code, "%d\n", 21);
+            ip_asm++;
+        }
+        else if (strcmp("start_", command_part_of_cmd) == 0) {
+            fprintf(program_code, "%d\n", 22);
+            ip_asm++;
+        }
     }
     else {
         printf("[ASM] SYNTAX ERR NOT EXIST COMMAND\n");

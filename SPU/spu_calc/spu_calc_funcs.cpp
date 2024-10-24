@@ -90,6 +90,9 @@ void spu_ctor(my_SPU *spu, char *codefilename, char *logname) {
     my_stack stk = {};
     stack_ctor(&stk, logname);
 
+    my_stack stk_func = {};
+    stack_ctor(&stk_func, logname);
+
     log_file = fopen(logname, "a");
     if (log_file == nullptr) {
         printf("[SPU] log_file open error\n");
@@ -98,6 +101,7 @@ void spu_ctor(my_SPU *spu, char *codefilename, char *logname) {
 
     spu->logname = logname;
     spu->stk = stk;
+    spu->stk_func = stk_func;
     spu->ip = 0;
     spu_code_buffer_ctor(codefilename, spu, log_file);
     spu->regist = (int *)calloc(num_of_registers, sizeof(int));
@@ -185,6 +189,13 @@ void run(char *codefilename, char *logname) {
     stackelem_t stke = 0;
     int *addr_where_pop_to = nullptr;
 
+    while (spu.code_buffer[spu.ip] != start) {
+        spu.ip++;
+    }
+
+    spu.ip++; // на +1 после точки старта начинаем
+    printf("start ip: %d\n", spu.ip);
+    
     while (if_run) {
         switch (spu.code_buffer[spu.ip]) {
             case hlt:
@@ -343,6 +354,20 @@ void run(char *codefilename, char *logname) {
                     spu.ip = spu.code_buffer[spu.ip + 1];
                 }
                 else spu.ip += 2;
+                spu_dump(&spu);
+                break;
+            case call:
+                printf("im in call\n");
+                spu.ip += 2;
+                stack_push(&spu.stk_func, spu.ip);
+                spu.ip = spu.code_buffer[spu.ip - 1];
+                printf ("start of calling func: %d\n", spu.ip);
+                spu_dump(&spu);
+                break;
+            case cmd_return:
+                stack_pop(&spu.stk_func);
+                pop1 = spu.stk_func.popped;
+                spu.ip = pop1;
                 spu_dump(&spu);
                 break;
         }
