@@ -19,6 +19,7 @@ void lable_table_ctor(asm_lable_table *label_table, char *logname) {
     for (int i = 0; i < num_of_labels; i++) {
         label_table->label[i].ip = -1;
     }
+
     label_table->size = 0;
     label_table->logname = logname;
 }
@@ -124,18 +125,14 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
                 fprintf(program_code, "%d ", 7);
 
                 char *ptr_on_plus_in_agr = strchr(arg_part_of_cmd, '+');
-                //printf("[ASM] is correct start from +: %s\n", ptr_on_plus_in_agr);
 
                 if (ptr_on_plus_in_agr != nullptr) { // если есть +
                     if (sscanf(arg_part_of_cmd, "[%d+%*s", &temp) == 1) { // игнорируем всё что за плюсом
-                        //printf("int part of arg: %d\n", temp);
                         fprintf(program_code, "%d ", temp);
 
                         ptr_on_plus_in_agr++;
                         str_len = strlen(ptr_on_plus_in_agr);
                         ptr_on_plus_in_agr[str_len - 1] = '\0'; // убираем ]
-
-                        //printf("is correct deleting of []: %s\n", ptr_on_plus_in_agr);
 
                         if (strcmp("ax", ptr_on_plus_in_agr) == 0) {
                             fprintf(program_code, "%d\n", 0);
@@ -234,14 +231,11 @@ int command_cmp_and_writer(char cmd[], FILE *program_code, asm_lable_table *labe
 
                 if (ptr_on_plus_in_agr != nullptr) { // если есть +
                     if (sscanf(arg_part_of_cmd, "[%d+%*s", &temp) == 1) { // игнорируем всё что за плюсом
-                        //printf("int part of arg: %d\n", temp);
                         fprintf(program_code, "%d ", temp);
 
                         ptr_on_plus_in_agr++;
                         str_len = strlen(ptr_on_plus_in_agr);
                         ptr_on_plus_in_agr[str_len - 1] = '\0'; // убираем ]
-
-                        //printf("is correct deleting of []: %s\n", ptr_on_plus_in_agr);
 
                         if (strcmp("ax", ptr_on_plus_in_agr) == 0) {
                             fprintf(program_code, "%d\n", 0);

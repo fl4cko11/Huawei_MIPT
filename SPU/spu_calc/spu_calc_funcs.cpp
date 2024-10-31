@@ -173,10 +173,10 @@ int *spu_get_pop_addr(my_SPU *spu) {
 }
 
 void run(char *codefilename, char *logname) {
-    if (codefilename ==nullptr) {
+    if (codefilename == nullptr) {
         printf("[SPU] codefilename error");
     }
-    if (logname ==nullptr) {
+    if (logname == nullptr) {
         printf("[SPU] logname error");
     }
 
