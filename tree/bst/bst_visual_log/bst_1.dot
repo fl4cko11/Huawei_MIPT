@@ -1,0 +1,4 @@
+digraph BST {
+    node [shape=circle];
+    50 -> 30 [label="left"];
+}
