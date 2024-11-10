@@ -19,7 +19,7 @@ void generate_dot(node_t *root, FILE *file) {
     generate_dot(root->right, file);
 }
 
-void generate_bst_dot_log_file(bst_t *bst, const char *filename) {
+void generate_bst_dot_log_file(node_t *root, const char *filename) {
     FILE *file = fopen(filename, "w");
     if (!file) {
         fprintf(stderr, "Не удалось открыть файл для записи: %s\n", filename);
@@ -31,8 +31,8 @@ void generate_bst_dot_log_file(bst_t *bst, const char *filename) {
     fprintf(file, "    node [shape=circle];\n");
 
     // Генерация DOT-строк для каждого узла
-    if (&bst->nodes[0] != NULL) {
-        generate_dot(&bst->nodes[0], file);
+    if (root != NULL) {
+        generate_dot(root, file);
     }
 
     // Закрытие графа
@@ -41,7 +41,7 @@ void generate_bst_dot_log_file(bst_t *bst, const char *filename) {
     fclose(file);
 }
 
-void generate_bst_dot_log_image(bst_t *bst, int change_number) {
+void generate_bst_dot_log_image(node_t *root, int change_number) {
     char dot_filename[256];
     char img_filename[256];
     const char *dir = "bst_visual_log"; // Директория для сохранения
@@ -54,7 +54,7 @@ void generate_bst_dot_log_image(bst_t *bst, int change_number) {
     system("mkdir -p bst_visual_log");
 
     // Генерация DOT-файла
-    generate_bst_dot_log_file(bst, dot_filename);
+    generate_bst_dot_log_file(root, dot_filename);
 
     // Генерация изображения с помощью Graphviz
     char command[512];

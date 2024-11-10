@@ -5,8 +5,8 @@
 
 void generate_dot(node_t *root, FILE *file);
 
-void generate_bst_dot_log_file(bst_t *bst, const char *filename);
+void generate_bst_dot_log_file(node_t *root, const char *filename);
 
-void generate_bst_dot_log_image(bst_t *bst, int change_number);
+void generate_bst_dot_log_image(node_t *root, int change_number);
 
 #endif

@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-const size_t bst_max_size = 10;
-
 typedef struct node_t {
     int data;
     struct node_t *left;
@@ -14,8 +12,7 @@ typedef struct node_t {
 } node_t;
 
 typedef struct {
-    node_t *nodes;
-    size_t size;
+    node_t *root_node;
     //const char *logname;
     const char *name;
     int change_number;
