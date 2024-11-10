@@ -17,8 +17,11 @@ void bst_ctor(bst_t *bst, const char *name, int root_data) {
     bst->change_number = 0;
 }
 
-node_t *create_node(int data) {
+node_t *create_node(bst_t *bst, int data) { // всё дерево передаю только для логов
     node_t *new_node = (node_t *)calloc(1, sizeof(node_t));
+    if (new_node == nullptr) {
+        fprintf(stderr, "[bst %s] create node error", bst->name);
+    }
 
     new_node->data = data;
     new_node->left = nullptr;
@@ -33,7 +36,7 @@ int insert_value_in_bst(bst_t *bst, node_t *current_root_node_of_bst, int value)
     if (current_root_node_of_bst->data > value) {
         if (current_root_node_of_bst->left != nullptr) insert_value_in_bst(bst, current_root_node_of_bst->left, value);
         else {
-            node_t *new_node = create_node(value);
+            node_t *new_node = create_node(bst, value);
             current_root_node_of_bst->left = new_node;
             generate_bst_dot_log(bst);
             return 0;
@@ -43,7 +46,7 @@ int insert_value_in_bst(bst_t *bst, node_t *current_root_node_of_bst, int value)
     else if (current_root_node_of_bst->data < value) {
         if (current_root_node_of_bst->right != nullptr) insert_value_in_bst(bst, current_root_node_of_bst->right, value);
         else {
-            node_t *new_node = create_node(value);
+            node_t *new_node = create_node(bst, value);
             current_root_node_of_bst->right = new_node;
             generate_bst_dot_log(bst);
             return 0;
