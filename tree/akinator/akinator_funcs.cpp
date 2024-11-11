@@ -105,44 +105,53 @@ static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего аки
     assert(akr != nullptr);
 
     char answ = '\0';
-    char long_answ[100];
+    char long_answ[answ_buffers_size];
     fprintf(stdout, "[akr play] Have your object such signs: %s\n", current_akr_root->data);
     fprintf(stdout, "[akr play] Y/N: ");
     scanf(" %c", &answ);
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF); // для корреткного ввода удаляем \n из stdin (чисто специфика fgets)
 
     if (answ == 'Y') {
-        fprintf(stdout, "[akr play] EZ, this is: %s\n", current_akr_root->yes->data);
-        fprintf(stdout, "[akr play] THATS RIGHT??? Y/N:");
-        scanf(" %c", &answ);
-
-        if (answ == 'Y') {
-            fprintf(stdout, "[akr play] BYE BYE...\n");
-            return;
-        }
-
+        if (current_akr_root->yes->yes != nullptr) play_akr(current_akr_root->yes, akr); // если есть уточняющий вопрос
         else {
-            fprintf(stdout, "[akr play] Looks like I don't know this item, let's add it in\n");
-            fprintf(stdout, "[akr play] Formulate a question that would distinguish yours from the previous one: ");
-            scanf("%s", long_answ);
-            char *tmp = current_akr_root->yes->data;
-            current_akr_root->yes->data = strdup(long_answ);
-            fprintf(stdout, "[akr play] Who that was?: ");
-            scanf("%s", long_answ);
-            node_t *new_Y_node = create_node(strdup(long_answ));
-            node_t *new_N_node = create_node(tmp);
-            current_akr_root->yes->yes = new_Y_node;
-            current_akr_root->yes->no = new_N_node;
-            fprintf(stdout, "[akr play] Successfully added bye bye...\n");
-            generate_akr_dot_log(akr);
-            return;
+            fprintf(stdout, "[akr play] EZ, this is: %s\n", current_akr_root->yes->data);
+            fprintf(stdout, "[akr play] THATS RIGHT??? Y/N: ");
+            scanf(" %c", &answ);
+            while ((ch = getchar()) != '\n' && ch != EOF);
+
+            if (answ == 'Y') {
+                fprintf(stdout, "[akr play] BYE BYE...\n");
+                return;
+            }
+        
+            else {
+                fprintf(stdout, "[akr play] Looks like I don't know this item, let's add it in\n");
+                fprintf(stdout, "[akr play] Formulate a question that would distinguish yours from the previous one: ");
+                fgets(long_answ, answ_buffers_size, stdin);
+                long_answ[strcspn(long_answ, "\n")] = '\0';  // Убираем символ новой строки
+                char *tmp = current_akr_root->yes->data;
+                current_akr_root->yes->data = strdup(long_answ);
+                fprintf(stdout, "[akr play] Who that was?: ");
+                fgets(long_answ, answ_buffers_size, stdin);
+                long_answ[strcspn(long_answ, "\n")] = '\0';  // Убираем символ новой строки
+                node_t *new_Y_node = create_node(strdup(long_answ));
+                node_t *new_N_node = create_node(tmp);
+                current_akr_root->yes->yes = new_Y_node;
+                current_akr_root->yes->no = new_N_node;
+                fprintf(stdout, "[akr play] Successfully added bye bye...\n");
+                generate_akr_dot_log(akr);
+                return;
+            }
         }
     }
     else if (current_akr_root->no != nullptr) {
         if (current_akr_root->no->yes != nullptr) play_akr(current_akr_root->no, akr); // если уточняющий вопрос есть
         else {
             fprintf(stdout, "[akr play] EZ, this is: %s\n", current_akr_root->no->data);
-            fprintf(stdout, "[akr play] THATS RIGHT??? Y/N:");
+            fprintf(stdout, "[akr play] THATS RIGHT??? Y/N: ");
             scanf(" %c", &answ);
+            while ((ch = getchar()) != '\n' && ch != EOF);
 
             if (answ == 'Y') {
                 fprintf(stdout, "[akr play] BYE BYE...\n");
@@ -152,11 +161,13 @@ static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего аки
             else {
                 fprintf(stdout, "[akr play] Looks like I don't know this item, let's add it in\n");
                 fprintf(stdout, "[akr play] Formulate a question that would distinguish yours from the previous one: ");
-                scanf("%s", long_answ);
+                fgets(long_answ, answ_buffers_size, stdin);
+                long_answ[strcspn(long_answ, "\n")] = '\0';  // Убираем символ новой строки
                 char *tmp = current_akr_root->no->data;
                 current_akr_root->no->data = strdup(long_answ);
                 fprintf(stdout, "[akr play] Who that was?: ");
-                scanf("%s", long_answ);
+                fgets(long_answ, answ_buffers_size, stdin);
+                long_answ[strcspn(long_answ, "\n")] = '\0';  // Убираем символ новой строки
                 node_t *new_Y_node = create_node(strdup(long_answ));
                 node_t *new_N_node = create_node(tmp);
                 current_akr_root->no->yes = new_Y_node;

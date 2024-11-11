@@ -7,6 +7,7 @@
 #include <string.h>
 
 const size_t buffers_size = 1000;
+const size_t answ_buffers_size = 100;
 
 typedef struct node_t {
     char *data;

@@ -1,5 +1,5 @@
 digraph BST {
     node [shape=circle];
     "Exist?" -> "Live?" [label="yes"];
-    "Live?" -> "Its you" [label="yes"];
+    "Live?" -> "egor da sigma?" [label="yes"];
 }

@@ -6,4 +6,6 @@ digraph BST {
     "Live?" -> "brick" [label="no"];
     "egor da sigma?" -> "Egor" [label="yes"];
     "egor da sigma?" -> "Its you" [label="no"];
+    "Animal?" -> "cat" [label="yes"];
+    "Animal?" -> "Justice" [label="no"];
 }
