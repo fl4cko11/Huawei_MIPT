@@ -13,13 +13,14 @@ int main(int argc, char *argv[]) {
 
     char **buf_ptr = (char **)calloc(1, sizeof(char *));
     *buf_ptr = &prefix_buf[0];
-    assert(buf_ptr != nullptr);
-    assert(*buf_ptr != nullptr);
 
     akr_tree_from_prefix(buf_ptr, &(akr.root_node), &akr);
 
-    akr_prefix_dump(akr.root_node);
-    fprintf(stderr, "\n");
+    play_akr_interface(akr.root_node, &akr);
+    
+    FILE *datafile = fopen(argv[1], "w");
+    akr_update_datafile(akr.root_node, datafile);
+    fclose(datafile);
     
     return 0;
 }

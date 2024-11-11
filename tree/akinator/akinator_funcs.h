@@ -14,6 +14,10 @@ static char *get_token(char **buf_ptr, char *token);
 
 void akr_tree_from_prefix(char **buf_ptr, node_t **current_akr_root, akr_t *akr);
 
-void akr_prefix_dump(node_t *current_akr_root);
+void akr_update_datafile(node_t *current_akr_root, FILE *datafile);
+
+static void play_akr(node_t *current_akr_root, akr_t *akr);
+
+void play_akr_interface(node_t *current_akr_root, akr_t *akr);
 
 #endif
