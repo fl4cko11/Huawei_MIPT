@@ -16,8 +16,10 @@ void akr_tree_from_prefix(char **buf_ptr, node_t **current_akr_root, akr_t *akr)
 
 void akr_update_datafile(node_t *current_akr_root, FILE *datafile);
 
-static void play_akr(node_t *current_akr_root, akr_t *akr);
+void akr_play(node_t *current_akr_root, akr_t *akr);
 
-void play_akr_interface(node_t *current_akr_root, akr_t *akr);
+static int akr_get_def(node_t *current_akr_root, char *unit, way_buf_t **ptr_on_way_buffer);
+
+void akr_get_def_interface(node_t *current_akr_root, char *unit);
 
 #endif

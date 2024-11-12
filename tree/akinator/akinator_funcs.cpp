@@ -29,7 +29,7 @@ char *prefix_buffer_from_akr_datafile(char *datafile_name, char *prefix_buffer) 
     assert(datafile != nullptr);
 
     fgets(prefix_buffer, buffers_size, datafile);
-    fprintf(stderr, "[akr_funcs] pref buf: %s\n", prefix_buffer);
+    //fprintf(stderr, "[akr_funcs] pref buf: %s\n", prefix_buffer);
 
     fclose(datafile);
     return prefix_buffer;
@@ -68,7 +68,7 @@ void akr_tree_from_prefix(char **buf_ptr, node_t **current_akr_root, akr_t *akr)
         char token[256];
         token[0] = '\0';
         get_token(buf_ptr, token);
-        fprintf(stderr, "[akr_funcs] token: %s\n", token);
+        //fprintf(stderr, "[akr_funcs] token: %s\n", token);
 
         node_t *new_node = create_node(token);
         *current_akr_root = new_node;
@@ -80,7 +80,7 @@ void akr_tree_from_prefix(char **buf_ptr, node_t **current_akr_root, akr_t *akr)
         }
         akr_tree_from_prefix(buf_ptr, &((*current_akr_root)->yes), akr); // рекурсивно строим левое дерево (в префиксной записи считаем, что сначала левое указывается)
         akr_tree_from_prefix(buf_ptr, &((*current_akr_root)->no), akr); // рекурсивно строим правое дерево
-        *buf_ptr = *buf_ptr + 1; // конец подкоренного дерева 
+        *buf_ptr = *buf_ptr + 1; // конец левого подддерева 
     }
     return;
 }
@@ -100,7 +100,7 @@ void akr_update_datafile(node_t *current_akr_root, FILE *datafile) {
     fprintf(datafile, "}");
 }
 
-static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего акинатора для логов
+void akr_play(node_t *current_akr_root, akr_t *akr) { //всего акинатора для логов
     assert(current_akr_root != nullptr);
     assert(akr != nullptr);
 
@@ -113,7 +113,7 @@ static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего аки
     while ((ch = getchar()) != '\n' && ch != EOF); // для корреткного ввода удаляем \n из stdin (чисто специфика fgets)
 
     if (answ == 'Y') {
-        if (current_akr_root->yes->yes != nullptr) play_akr(current_akr_root->yes, akr); // если есть уточняющий вопрос
+        if (current_akr_root->yes->yes != nullptr) akr_play(current_akr_root->yes, akr); // если есть уточняющий вопрос
         else {
             fprintf(stdout, "[akr play] EZ, this is: %s\n", current_akr_root->yes->data);
             fprintf(stdout, "[akr play] THATS RIGHT??? Y/N: ");
@@ -146,7 +146,7 @@ static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего аки
         }
     }
     else if (current_akr_root->no != nullptr) {
-        if (current_akr_root->no->yes != nullptr) play_akr(current_akr_root->no, akr); // если уточняющий вопрос есть
+        if (current_akr_root->no->yes != nullptr) akr_play(current_akr_root->no, akr); // если уточняющий вопрос есть
         else {
             fprintf(stdout, "[akr play] EZ, this is: %s\n", current_akr_root->no->data);
             fprintf(stdout, "[akr play] THATS RIGHT??? Y/N: ");
@@ -181,19 +181,71 @@ static void play_akr(node_t *current_akr_root, akr_t *akr) { //всего аки
     return;
 }
 
-void play_akr_interface(node_t *current_akr_root, akr_t *akr) { //всего акинатора для логов
-    assert(current_akr_root != nullptr);
-    assert(akr != nullptr);
+static int akr_get_def(node_t *current_akr_root, char *unit, way_buf_t **ptr_on_way_buffer) {
+    fprintf(stderr, "[akr_funcs] way buf now: (%s, %d)\n", (*ptr_on_way_buffer-1)->data, (*ptr_on_way_buffer-1)->yes_or_no);
 
-    char answ;
-    fprintf(stdout, "[akr intrf] Hello, wanna play? Y/N: ");
-    scanf(" %c", &answ);
-    if (answ == 'Y') {
-        play_akr(current_akr_root, akr);
+    if (strcmp(current_akr_root->data, unit) == 0) {
+        return 1;
     }
-    else {
-        fprintf(stdout, "[akr intrf] OK, cancel...\n");
-        return;
+
+    (*ptr_on_way_buffer)->data = strdup(current_akr_root->data);
+
+    if (current_akr_root->yes != nullptr) {
+        // (*ptr_on_way_buffer)->data = strdup(current_akr_root->yes->data);
+        (*ptr_on_way_buffer)->yes_or_no = 1;
+        *ptr_on_way_buffer = *ptr_on_way_buffer + 1;
+        if (akr_get_def(current_akr_root->yes, unit, ptr_on_way_buffer)) return 1;
     }
+
+    if (current_akr_root->no != nullptr) {
+        // (*ptr_on_way_buffer)->data = strdup(current_akr_root->no->data);
+        (*ptr_on_way_buffer)->yes_or_no = 0;
+        *ptr_on_way_buffer = *ptr_on_way_buffer + 1;
+        if (akr_get_def(current_akr_root->no, unit, ptr_on_way_buffer)) return 1;
+    }
+
+    *ptr_on_way_buffer = *ptr_on_way_buffer - 1;
+    (*ptr_on_way_buffer)->data = 0;
+    (*ptr_on_way_buffer)->yes_or_no = -1;
+
+    return 0; // Узел не найден в текущем поддереве
+} 
+
+void akr_get_def_interface(node_t *current_akr_root, char *unit) {
+    way_buf_t *way_buffer = (way_buf_t *)calloc(buffers_size, sizeof(way_buf_t));
+    assert(way_buffer != nullptr);
+    for (int i = 0; i < buffers_size; i++) {
+        way_buffer[i].data = (char *)calloc(buffers_size, sizeof(char));
+        assert(&way_buffer[i] != nullptr);
+        way_buffer[i].yes_or_no = -1;
+    }
+
+    way_buf_t **ptr_on_way_buffer = (way_buf_t **)calloc(1, sizeof(way_buf_t *));
+    assert(ptr_on_way_buffer != nullptr);
+    *ptr_on_way_buffer = &way_buffer[0];
+    akr_get_def(current_akr_root, unit, ptr_on_way_buffer);
+
+    fprintf(stderr, "%s is POS ANSW for: ", unit);
+    // if (way_buffer[0].yes_or_no == 1) fprintf(stderr, "%s ", current_akr_root->data);
+    int itter1 = 0;
+    while (way_buffer[itter1].yes_or_no != -1) {
+        if (way_buffer[itter1].yes_or_no == 1 && (strcmp(way_buffer[itter1].data, unit) != 0)) {
+            fprintf(stderr, "%s ", way_buffer[itter1].data);
+        }
+        itter1++;
+    }
+    fprintf(stderr, "but NEG ANSW for: ");
+    // if (way_buffer[0].yes_or_no == 0) fprintf(stderr, "%s ", current_akr_root->data);
+    int itter2 = 0;
+    while (way_buffer[itter2].yes_or_no != -1) {
+        // fprintf(stderr, "[akr_funcs] data: (%s, %d)\n", way_buffer[itter2].data, way_buffer[itter2].yes_or_no);
+        // sleep(2);
+        if (way_buffer[itter2].yes_or_no == 0) {
+            fprintf(stderr, "%s ", way_buffer[itter2].data);
+        }
+        itter2++;
+    }
+
+    fprintf(stderr, "\n");
     return;
 }

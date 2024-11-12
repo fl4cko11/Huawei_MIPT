@@ -1,6 +1,7 @@
 digraph BST {
     node [shape=circle];
     "Exist?" -> "Live?" [label="yes"];
+    "Exist?" -> "Animal?" [label="no"];
     "Live?" -> "egor da sigma?" [label="yes"];
     "Live?" -> "on foot?" [label="no"];
     "egor da sigma?" -> "Egor" [label="yes"];
@@ -8,4 +9,7 @@ digraph BST {
     "ML?" -> "Artem" [label="yes"];
     "ML?" -> "Its you" [label="no"];
     "on foot?" -> "boot" [label="yes"];
+    "on foot?" -> "brick" [label="no"];
+    "Animal?" -> "cat" [label="yes"];
+    "Animal?" -> "Justice" [label="no"];
 }

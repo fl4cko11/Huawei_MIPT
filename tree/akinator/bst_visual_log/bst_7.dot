@@ -1,10 +1,10 @@
 digraph BST {
     node [shape=circle];
     "Exist?" -> "Live?" [label="yes"];
-    "Exist?" -> "Animal?" [label="no"];
     "Live?" -> "egor da sigma?" [label="yes"];
-    "Live?" -> "brick" [label="no"];
+    "Live?" -> "on foot?" [label="no"];
     "egor da sigma?" -> "Egor" [label="yes"];
-    "egor da sigma?" -> "Its you" [label="no"];
-    "Animal?" -> "cat" [label="yes"];
+    "egor da sigma?" -> "ML?" [label="no"];
+    "ML?" -> "Artem" [label="yes"];
+    "ML?" -> "Its you" [label="no"];
 }

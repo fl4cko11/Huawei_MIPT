@@ -3,5 +3,5 @@ digraph BST {
     "Exist?" -> "Live?" [label="yes"];
     "Live?" -> "egor da sigma?" [label="yes"];
     "egor da sigma?" -> "Egor" [label="yes"];
-    "egor da sigma?" -> "Its you" [label="no"];
+    "egor da sigma?" -> "ML?" [label="no"];
 }
