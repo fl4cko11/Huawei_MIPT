@@ -82,7 +82,7 @@ void akr_tree_from_prefix(char **buf_ptr, node_t **current_akr_root, akr_t *akr)
         akr_tree_from_prefix(buf_ptr, &((*current_akr_root)->no), akr); // рекурсивно строим правое дерево
         *buf_ptr = *buf_ptr + 1; // конец левого подддерева 
     }
-    return;
+    // return;
 }
 
 void akr_update_datafile(node_t *current_akr_root, FILE *datafile) {

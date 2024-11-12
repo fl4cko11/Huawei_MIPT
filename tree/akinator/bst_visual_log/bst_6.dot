@@ -5,5 +5,5 @@ digraph BST {
     "egor da sigma?" -> "Egor" [label="yes"];
     "egor da sigma?" -> "ML?" [label="no"];
     "ML?" -> "Artem" [label="yes"];
-    "ML?" -> "Its you" [label="no"];
+    "ML?" -> "Steph Curry?" [label="no"];
 }
