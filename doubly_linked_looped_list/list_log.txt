@@ -1,0 +1,49 @@
+the zero element of this list is fictitious; when viewing the log, take the 1st index as zero
+[LIST vasya] list: 666 666 666 666 666 666 666 666 666 
+[LIST vasya] next: 0 0 -1 -1 -1 -1 -1 -1 -1 
+[LIST vasya] prev: 0 0 -1 -1 -1 -1 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 1
+
+[LIST vasya] PUSH_FRONT unit: 1 (now front in data have index: 1)...
+[LIST vasya] list: 666 1 666 666 666 666 666 666 666 
+[LIST vasya] next: 0 0 -1 -1 -1 -1 -1 -1 -1 
+[LIST vasya] prev: 0 0 -1 -1 -1 -1 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 2
+
+[LIST vasya] PUSH_FRONT unit: 4 (now front in data have index: 1)...
+[LIST vasya] list: 666 1 4 666 666 666 666 666 666 
+[LIST vasya] next: 0 0 1 -1 -1 -1 -1 -1 -1 
+[LIST vasya] prev: 0 2 0 -1 -1 -1 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 3
+
+[LIST vasya] PUSH_FRONT unit: 9 (now front in data have index: 2)...
+[LIST vasya] list: 666 1 4 9 666 666 666 666 666 
+[LIST vasya] next: 0 0 1 2 -1 -1 -1 -1 -1 
+[LIST vasya] prev: 0 2 3 0 -1 -1 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 4
+
+[LIST vasya] PUSH_FRONT_OF_UNIT: 1 with index in data: 1
+[LIST vasya] list: 666 1 4 9 777 666 666 666 666 
+[LIST vasya] next: 0 0 4 2 1 -1 -1 -1 -1 
+[LIST vasya] prev: 0 4 3 0 2 -1 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 5
+
+[LIST vasya] PUSH_BACK_OF_UNIT: 4 with index in data: 2
+[LIST vasya] list: 666 1 4 9 777 333 666 666 666 
+[LIST vasya] next: 0 0 5 2 1 4 -1 -1 -1 
+[LIST vasya] prev: 0 4 3 0 5 2 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 5 6 7 8 1 
+[LIST vasya] free: 6
+
+[LIST vasya] DELETE_UNIT: 777 with index in data: 4
+[LIST vasya] list: 666 1 4 9 666 333 666 666 666 
+[LIST vasya] next: 0 0 5 2 -1 1 -1 -1 -1 
+[LIST vasya] prev: 0 5 3 0 -1 2 -1 -1 -1 
+[LIST vasya] next_free: 0 2 3 4 6 6 7 8 1 
+[LIST vasya] free: 4
+

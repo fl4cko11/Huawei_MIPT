@@ -1,0 +1,14 @@
+digraph G {
+    n1 [label="1"];
+    n1 -> n0;
+    n1 -> n4;
+    n2 [label="4"];
+    n2 -> n4;
+    n2 -> n3;
+    n3 [label="9"];
+    n3 -> n2;
+    n3 -> n0;
+    n4 [label="777"];
+    n4 -> n1;
+    n4 -> n2;
+}
