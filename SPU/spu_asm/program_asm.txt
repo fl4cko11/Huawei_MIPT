@@ -1,0 +1,8 @@
+func:
+push 5
+push 7
+add
+return
+start_
+call func:
+hlt
