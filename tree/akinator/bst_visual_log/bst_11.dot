@@ -1,0 +1,14 @@
+digraph BST {
+    node [shape=circle];
+    "Exist?" -> "Live?" [label="yes"];
+    "Live?" -> "egor da sigma?" [label="yes"];
+    "Live?" -> "on foot?" [label="no"];
+    "egor da sigma?" -> "Egor" [label="yes"];
+    "egor da sigma?" -> "ML?" [label="no"];
+    "ML?" -> "Artem" [label="yes"];
+    "ML?" -> "Steph Curry?" [label="no"];
+    "Steph Curry?" -> "Andrew Vas" [label="yes"];
+    "Steph Curry?" -> "Its you" [label="no"];
+    "on foot?" -> "boot" [label="yes"];
+    "on foot?" -> "brick" [label="no"];
+}
