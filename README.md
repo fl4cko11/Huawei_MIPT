@@ -2,4 +2,4 @@ Hello, these are my projects that were written while studying Dedinsky’s cours
 
 Each project provides assembly via "makefile".
 
-Most files have the .cpp extension for convenience, all projects are implemented in C.
+Most files have the .cpp extension for convenience, **all projects are implemented in C**.
